@@ -291,7 +291,7 @@ ul {
     height: 180px;
     width: 270px;
     object-fit: cover;
-    border:#2A2B2A solid 2px;
+    border:#2A2B2A solid 4px;
     border-radius: 12px;
 }
 
