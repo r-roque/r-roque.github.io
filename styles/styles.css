@@ -179,8 +179,6 @@ ul {
 }
 
 
-
-
 /* About */
 
 .About-Me-Section {
@@ -204,16 +202,16 @@ ul {
 }
 
 .pic {
-    height: auto;
-    width: 450px;
+    height: 300px;
+    width: 300px;
     border-radius: 32px;
 }
 
 .About-Bio {
     display: flex;
     flex-direction: column;
-    width: 450px;
-    height: 450px;
+    width: 300px;
+    height: 300px;
     justify-content: center;
     align-items: center;
     background-color: #f8f8f8;
@@ -222,8 +220,8 @@ ul {
 }
 
 .About-Bio p {
-    margin: 0 30px;
-    font-size: 16px;
+    margin: 0 20px;
+    font-size: 12px;
     font-family: "Istok Web", sans-serif;
     font-weight: 450;
     font-style: normal;
@@ -255,7 +253,7 @@ ul {
 }
 
 .Project-slider {
-    width: 500px;
+    width: 425px;
     /* change width to 100% as it scrolls out */
     height: 100%;
     /* padding: 30px 0; */
@@ -272,8 +270,8 @@ ul {
 }
 
 .Card {
-    height: 520px;
-    width: 455px;
+    height: 375px;
+    width: 325px;
     background-color: #f8f8f8;
     padding: 25px 0px;
     border-radius: 32px;
@@ -290,8 +288,8 @@ ul {
 }
 
 .ss {
-    height: 250px;
-    width: 400px;
+    height: 180px;
+    width: 270px;
     object-fit: cover;
     border:#2A2B2A solid 2px;
     border-radius: 12px;
@@ -305,12 +303,13 @@ ul {
 }
 
 .link-text h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: 15px;
     text-align: left;
 }
 
 .link-text p {
+    font-size: 12px;
     font-weight: 400;
 }
 
@@ -342,7 +341,7 @@ ul {
 }
 
 .Art-Slider {
-    width: 500px;
+    width: 350px;
     /* change width to 100% as it scrolls out */
     height: 100%;
     /* padding: 30px 0; */
@@ -352,28 +351,28 @@ ul {
 
 .Art-Cards {
     width: fit-content;
-    height: 600px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .Instagram-Card {
-    height: 520px;
-    width: 455px;
+    height: 375px;
+    width: 325px;
     background-color: #f8f8f8;
     padding: 25px 0px;
     border-radius: 32px;
-    margin: 0 30px;
+    margin: 0 25px;
 }
 
 .Vsco-Card {
-    height: 520px;
-    width: 455px;
+    height: 375px;
+    width: 325px;
     background-color: #f8f8f8;
     padding: 25px 0px;
     border-radius: 32px;
-    margin: 0 30px;
+    margin: 0 25px;
 }
 
 .link-text {
@@ -505,11 +504,11 @@ footer h5 {
 
 
 
+/* @media all and(min-width: ) */
 
 
 
-
-@media all and (min-width: 910px) {
+@media all and (min-width: 820px) {
 
     .container {
         flex-direction: row;
@@ -561,21 +560,31 @@ footer h5 {
     }
 
     .pic {
-        width: 561px;
-        height: 561px;
+        width: 350px;
+        height: 350px;
     }
 
     .About-Bio {
-        width: 561px;
-        height: 561px;
+        width: 350px;
+        height: 350px;
     }
 
     .About-Bio p{
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .Project-slider {
-        width: 100%;
+        width: 700px;
+    }
+
+    .Card {
+        height: 526px;
+        width: 400px;
+    }
+
+    .ss {
+        height: 230px;
+        width: 330px;
     }
 
     .link-text p {
@@ -583,8 +592,22 @@ footer h5 {
     }
 
     .Art-Slider {
-        width: 1030px;
+        width: 700px;
         }
+
+    .Art-Cards {
+        height: 600px;
+    }
+
+    .Instagram-Card {
+        height: 526px;
+        width: 400px;
+    }
+
+    .Vsco-Card {
+        height: 526px;
+        width: 400px;
+    }
 
     .Art-Section {
         justify-content: center;
@@ -602,4 +625,64 @@ footer h5 {
         gap: 200px;
     }
 
+}
+
+@media all and (min-width: 1020px) {
+    .intro h2 {
+        font-size: 64px;
+    }
+
+    .intro h3 {
+        font-size: 24px;
+    }
+
+    .intro h1 {
+        font-size: 128px;
+    }
+
+    .About-Slides {
+        flex-direction: row-reverse;
+    }
+
+    .pic {
+        width: 561px;
+        height: 561px;
+    }
+
+    .About-Bio {
+        width: 561px;
+        height: 561px;
+    }
+
+    .About-Bio p{
+        font-size: 20px;
+    }
+
+    .Project-slider {
+        width: 1400px;
+    }
+
+    .link-text p {
+        font-size: 18px;
+    }
+
+    .Art-Slider {
+        width: 900px;
+        }
+
+    .Art-Section {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Digital-Spaces-Section {
+        align-items: left;
+    }
+
+    .Responsive-Contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 200px;
+    }
 }
