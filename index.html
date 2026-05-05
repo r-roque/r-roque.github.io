@@ -362,12 +362,19 @@
     aspect-ratio: 16/10;
   }
 
-  /* bottom row: 3 equal cards each spanning 2 cols */
+  /* middle row: 3 equal cards each spanning 2 cols */
   .project-card:nth-child(3),
   .project-card:nth-child(4),
   .project-card:nth-child(5) {
     grid-column: span 2;
     aspect-ratio: 4/3;
+  }
+
+  /* bottom row: 2 wide cards each spanning 3 cols */
+  .project-card:nth-child(6),
+  .project-card:nth-child(7) {
+    grid-column: span 3;
+    aspect-ratio: 16/10;
   }
 
   .project-card-bg {
@@ -386,7 +393,9 @@
   .card-skinsense .project-card-bg { background: url('images/hero-skinsense.png') center/cover no-repeat; }
   .card-coulture .project-card-bg { background: url('images/hero-coulture.png') center/cover no-repeat; }
   .card-lonuestro .project-card-bg { background: url('images/hero-ln.png') center/cover no-repeat; }
-  .card-coming .project-card-bg { background: var(--warm); }
+  .card-coming      .project-card-bg { background: var(--warm); }
+  .card-figmalearn  .project-card-bg { background: url('images/figmalearn.png') center/cover no-repeat; }
+  .card-microbiome  .project-card-bg { background: url('images/subset-analysis.png') center/cover no-repeat; }
 
   .project-card-content {
     position: absolute;
@@ -705,6 +714,8 @@
     .project-card:nth-child(3),
     .project-card:nth-child(4),
     .project-card:nth-child(5) { grid-column: span 1; }
+    .project-card:nth-child(6),
+    .project-card:nth-child(7) { grid-column: span 1; aspect-ratio: 4/3; }
     .about-grid { grid-template-columns: 1fr; gap: 48px; }
     footer { flex-direction: column; gap: 8px; text-align: center; }
   }
@@ -747,7 +758,7 @@
     </p>
     <div class="hero-cta">
       <a href="#work" class="btn btn-primary">View Work</a>
-      <a href="images/Rodrigos_Resume_LaTeX.pdf" class="btn btn-secondary" target="_blank">Resume ↗</a>
+      <a href="images/Healthtech_Resume_Rodrigo_Roque_Hernandez.pdf" class="btn btn-secondary" target="_blank">Resume ↗</a>
       <a href="#connect" class="btn btn-secondary">Connect</a>
     </div>
   </div>
@@ -827,6 +838,28 @@
       <div class="project-arrow">↗</div>
     </a>
 
+    <!-- Figma Learn -->
+    <a class="project-card card-figmalearn reveal" href="https://www.figma.com/board/tCoVmaTNJJfe5GtkVUqrox/MEJO-581---Figma-Learn?node-id=0-1&t=VeGJPij0Q3B3KitQ-1" target="_blank">
+      <div class="project-card-bg"></div>
+      <div class="project-card-content">
+        <div class="project-tag">UX Design · Interactive Prototype · MEJO 581</div>
+        <div class="project-title">Figma Learn</div>
+        <div class="project-desc">Designed an in-app onboarding and learning feature for Figma — UX research, personas, usability testing, and a full interactive prototype. Built on one idea: the best place to learn a tool is inside the tool itself.</div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+
+    <!-- Gut Microbiome Meta-Analysis -->
+    <a class="project-card card-microbiome reveal" href="images/GutMicrobiome_T2D_CRC_Final.pdf" target="_blank">
+      <div class="project-card-bg"></div>
+      <div class="project-card-content">
+        <div class="project-tag">Data Science · Bioinformatics · DATA 510</div>
+        <div class="project-title">Gut Microbiome Meta-Analysis</div>
+        <div class="project-desc">Analyzed whether microbiome data can predict Type 2 Diabetes & Colorectal Cancer across 1,700+ samples — random-effects meta-analysis, PCA, ComBat batch correction, and Random Forest with LODO validation.</div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+
   </div>
 </section>
 
@@ -866,10 +899,22 @@
     <div class="about-right reveal">
       <div class="timeline">
         <div class="timeline-item">
-          <div class="tl-date">Jan 2026 — Present</div>
+          <div class="tl-date">Summer 2026</div>
+          <div class="tl-role">UX & Web Design Intern</div>
+          <div class="tl-org">SAS Institute</div>
+          <div class="tl-desc">Bringing design systems thinking and data fluency to health tech product development at one of the world's leading analytics companies.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">May 2026 — Present</div>
+          <div class="tl-role">Executive Director</div>
+          <div class="tl-org">SolHacks · Latinos in Tech × SHPE, UNC</div>
+          <div class="tl-desc">Appointed to lead UNC Chapel Hill's first Latinx hackathon into its next chapter — expanding partnerships across the Carolinas and building on a ~30% participation increase in year one.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">Jan–May 2026</div>
           <div class="tl-role">Director of External Marketing</div>
           <div class="tl-org">SolHacks · Latinos in Tech, UNC</div>
-          <div class="tl-desc">Leading end-to-end external outreach across branding, digital campaigns, and community partnerships. Data-informed marketing drove ~30% increase in event participation.</div>
+          <div class="tl-desc">Led end-to-end external outreach across branding, digital campaigns, and community partnerships. Data-informed marketing drove ~30% increase in event participation.</div>
         </div>
         <div class="timeline-item">
           <div class="tl-date">Sep 2025 — Present</div>
