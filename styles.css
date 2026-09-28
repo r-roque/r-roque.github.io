@@ -1,0 +1,531 @@
+/* Tokens pulled from Figma node 1:2 (port/1, 1512 × 982) */
+:root {
+  --ink: #000;
+  --paper: #fff;
+  --nav-bg: #232323;
+  --nav-active: #7d9fe9;
+  --nav-text: #fff;
+  --muted: #8b8b8b;
+  --link-hover: var(--nav-active);   /* blue accent for hovered links, arrows, and frames */
+
+  --font-body: "Instrument Sans", system-ui, sans-serif;
+  --font-display: "Michroma", "Instrument Sans", sans-serif;
+
+  --text: 16px;
+  --line: 20px;          /* Figma "normal" line height → 20px text boxes */
+  --gutter: 46px;        /* left edge of every left-column element */
+  --top: 53px;           /* name + clock baseline row */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text);
+  line-height: var(--line);
+  -webkit-font-smoothing: antialiased;
+}
+
+p, h1, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+/* Arrow icons: the SVGs are used as masks so they take the text color (black, white, or hover blue) */
+.icon {
+  display: inline-block;
+  flex: none;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+.icon--arrow { --icon: url("assets/arrow.svg"); width: 8px; height: 8px; }
+.icon--back { --icon: url("assets/arrow-back.svg"); width: 13px; height: 10px; }
+.icon--caption { --icon: url("assets/arrow-caption.svg"); width: 11px; height: 11px; }
+
+a { transition: color .15s ease, border-color .15s ease; }
+a:focus-visible { outline: 2px solid var(--nav-active); outline-offset: 3px; border-radius: 2px; }
+
+/* ---------- Layout ---------- */
+/* Desktop mirrors the frame: left column 46→529px, bio column 529→958px */
+.page {
+  position: relative;
+  max-width: 1512px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: var(--top) var(--gutter) 140px;   /* bottom room for floating nav */
+  display: grid;
+  grid-template-columns: 483px 429px 1fr;
+  align-items: start;
+  align-content: start;                      /* don't stretch rows to fill min-height */
+}
+
+/* ---------- Clock (top right) ---------- */
+.clock {
+  position: absolute;
+  top: var(--top);
+  right: 35px;
+  letter-spacing: 1.28px;
+  white-space: nowrap;
+}
+.clock__time {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Intro column ---------- */
+.intro__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+.intro__rule {
+  display: block;
+  width: 244px;
+  height: 1px;
+  margin: 29px 0 0;         /* 1px stroke sits on y 122–123 */
+  border: 0;
+  background: var(--ink);
+}
+.intro__role { margin-top: 13px; }        /* y 136 */
+
+.connect { margin-top: 55px; }            /* y 211 */
+.connect__label { font-weight: 700; }
+.connect__list {
+  margin-top: 25px;                       /* y 256 */
+  display: grid;
+  gap: 19px;                              /* 39px row pitch */
+}
+.connect__link {
+  display: inline-grid;
+  grid-template-columns: 77px 8px;        /* arrows align at x 123 */
+  align-items: start;
+}
+.connect__link .icon { margin-top: 8px; transition: transform .15s ease; }
+.connect__link:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 3px; }
+.connect__link:hover .icon { transform: translate(2px, -2px); }
+
+/* ---------- Welcome column ---------- */
+.welcome { margin-top: 168px; }           /* y 221 */
+.welcome__bio { display: grid; gap: var(--line); }   /* one blank line between paragraphs */
+.welcome__art {
+  display: block;
+  width: 406px;                           /* 325px × 1.25 */
+  max-width: 100%;
+  aspect-ratio: 1;                        /* square crop */
+  object-fit: cover;
+  height: auto;
+  margin: 50px auto 0;                    /* y 471, centered under the bio */
+} 
+
+/* ---------- Work view (node 30:68) ---------- */
+/* Cards start at x 269, so the left track shrinks to 223px (269 − gutter) */
+.page:is([data-view="work"], [data-view="misc"]) { grid-template-columns: 223px 1fr; }
+.page:is([data-view="work"], [data-view="misc"]) .intro { width: 483px; }   /* keep the name on two lines */
+.work { margin-top: 273px; }              /* index labels at y 326 */
+.work__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 283px);
+  column-gap: 62px;                       /* 345px card pitch */
+}
+.work-card { display: grid; }
+.work-card__index { font-weight: 700; }
+.work-card__frame {
+  margin-top: 5px;                        /* frame top y 351 */
+  display: grid;
+  place-items: center;
+  aspect-ratio: 283 / 278;
+  border: 1px solid currentColor;         /* turns blue with the text on hover */
+  transition: border-color .15s ease;
+}
+.work-card__solhacks { height: 35.25px; } /* PNG is stretched to fit, as in Figma */
+.work-card__meta {
+  position: relative;
+  margin-top: 11px;                       /* title y 641 */
+  display: grid;
+  row-gap: 5px;                           /* role y 666 */
+}
+.work-card__title { font-weight: 600; }
+.work-card__arrow {
+  position: absolute;
+  top: 16px;                              /* y 657 */
+  right: 12px;                            /* x 532 */
+  transition: transform .15s ease;
+}
+.work-card:hover { color: var(--link-hover); }
+.work-card:hover .work-card__title { text-decoration: underline; text-underline-offset: 3px; }
+.work-card:hover .work-card__arrow { transform: translate(2px, -2px); }
+
+/* ---------- Misc view (node 36:104) ---------- */
+/* Same 283px columns as work; the dj card spans two */
+.misc { margin-top: 174px; }              /* first row at y 227 */
+.misc__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 283px);
+  grid-auto-rows: 278px;
+  gap: 58px 62px;
+}
+.misc-card {
+  display: grid;
+  grid-template-rows: 36px auto auto 1fr; /* icon slot, title, blurb, link */
+  padding: 18px 21px 26px;
+  border: 1px solid var(--ink);
+  transition: border-color .15s ease;
+}
+.misc-card { height: 100%; transition: color .15s ease, border-color .15s ease; }   /* the whole card is the link, like work cards */
+.misc-card:hover { color: var(--link-hover); border-color: var(--link-hover); }   /* text + arrow go blue; the top icon (an image) stays black */
+.misc__item--wide { grid-column: span 2; }
+.misc-card__title { margin-top: 14px; font-weight: 700; }   /* title at card + 68px */
+.misc-card__title + p { margin-top: 13px; }
+.misc-card__link {
+  align-self: end;
+  justify-self: start;
+}
+/* inline so the arrow follows the last word if the link wraps; baseline puts its top 8px down */
+.misc-card__link .icon { margin-left: 7px; transition: transform .15s ease; }
+.misc-card:hover .misc-card__link { text-decoration: underline; text-underline-offset: 3px; }
+.misc-card:hover .misc-card__link .icon { transform: translate(2px, -2px); }
+
+/* ---------- Floating tab bar ---------- */
+.tabbar {
+  --tab-w: 97px;
+  --tab-gap: 15.5px;
+  position: fixed;
+  left: 50%;
+  bottom: 29px;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 352px;
+  height: 54px;
+  padding: 8px 15px;
+  display: grid;
+  grid-template-columns: repeat(3, var(--tab-w));
+  column-gap: var(--tab-gap);
+  background: var(--nav-bg);
+  border-radius: 32px;
+  filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .25));
+}
+.tabbar__indicator {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  width: var(--tab-w);
+  height: 38px;
+  border-radius: 20px;
+  background: var(--nav-active);
+  transform: translateX(calc(var(--active, 0) * (var(--tab-w) + var(--tab-gap))));
+  transition: transform .3s cubic-bezier(.3, .7, .2, 1);
+}
+.tabbar__tab {
+  position: relative;               /* above indicator */
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  color: var(--nav-text);
+  transition: color .2s ease;
+}
+.tabbar__tab[aria-current="page"] { color: var(--ink); }
+.tabbar__tab:not([aria-current="page"]):hover { color: var(--nav-active); }
+
+@media (prefers-reduced-motion: reduce) {
+  .tabbar__indicator, .tabbar__tab, .connect__link .icon, .work-card__arrow, .misc-card__link .icon { transition: none; }
+}
+
+/* ---------- Tablet: keep two columns, let them flex ---------- */
+@media (max-width: 1100px) {
+  .page { grid-template-columns: minmax(200px, 1fr) minmax(0, 429px) minmax(0, 1fr); column-gap: 32px; }
+  /* Work: stack the cards under the intro and let them wrap */
+  .page:is([data-view="work"], [data-view="misc"]) { grid-template-columns: 1fr; }
+  .page:is([data-view="work"], [data-view="misc"]) .intro { width: auto; }
+  .work { margin-top: 56px; }
+  .work__list { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 40px 32px; }
+  .misc { margin-top: 56px; }
+  .misc__list { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); grid-auto-rows: minmax(220px, auto); gap: 32px; }
+  .misc__item--wide { grid-column: 1 / -1; }
+}
+
+/* ---------- Mobile (nodes 2:2, 135:111, 135:134 — 402px frames) ---------- */
+@media (max-width: 760px) {
+  :root { --gutter: 25px; --top: 31px; }
+  .page {
+    grid-template-columns: 1fr;
+    padding-bottom: 140px;                /* room above the floating tab bar */
+  }
+
+  /* Intro: clock drops under the role; "connect:" label is hidden */
+  .intro__rule { margin-top: 36px; max-width: 100%; }   /* y 107 */
+  .intro .clock { position: static; margin-top: 14px; } /* y 155 */
+  .connect { margin-top: 39px; }                        /* first link y 214 */
+  .connect__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .connect__list { margin-top: 0; gap: 27px; }          /* 47px row pitch */
+
+  /* Home */
+  .welcome { margin-top: 74px; }                        /* bio y 449 */
+  .welcome__bio br { display: none; }                   /* let the last line flow */
+  .welcome__art {
+    width: 325px;
+    aspect-ratio: 325 / 344;
+    object-position: 55% center;                        /* Figma crop sits a bit right of center */
+    margin-top: 51px;                                   /* art y 700 */
+  }
+
+  /* Work + misc: fixed 283px cards, centered */
+  .page:is([data-view="work"], [data-view="misc"]) .intro { width: auto; }
+  .work { margin-top: 88px; }                           /* 00 label y 463 */
+  .work__list { grid-template-columns: 283px; justify-content: center; gap: 68px 0; }
+  .work-card__arrow { top: 20px; }
+  .misc { margin-top: 125px; }                          /* first card y 500 */
+  .misc__list {
+    grid-template-columns: 283px;
+    grid-auto-rows: 278px;
+    justify-content: center;
+    gap: 83px 0;                                        /* 361px card pitch */
+  }
+
+  .tabbar {
+    --tab-w: calc((min(352px, 100vw - 32px) - 30px - 2 * var(--tab-gap)) / 3);
+    width: min(352px, calc(100vw - 32px));
+    bottom: 45px;                                       /* y 775 in an 874px-tall viewport */
+  }
+}
+
+/* ---------- Case study (nodes 169:424 desktop, 199:349 mobile) ---------- */
+.case {
+  position: relative;                     /* clock anchors here */
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: var(--top) 74px 93px;
+}
+.case__back { display: inline-flex; align-items: start; gap: 8px; }
+.case__back .icon { margin-top: 6px; transition: transform .15s ease; }
+.case__back:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 3px; }
+.case__back:hover .icon { transform: translateX(-2px); }
+
+.case__tags { margin-top: 41px; color: var(--muted); }          /* y 114 */
+.case__title { margin-top: 16px; font-size: 32px; line-height: 39px; font-weight: 700; }  /* y 150 */
+.case__subtitle { margin-top: 16px; color: var(--muted); }      /* y 205 */
+
+/* Role / timeline / tools / impact strip; scrolls sideways when it doesn't fit */
+.case__meta-scroll { margin-top: 25px; overflow-x: auto; }      /* y 250 */
+.case__meta {
+  margin: 0;
+  width: 894px;
+  min-height: 110px;
+  display: grid;
+  grid-template-columns: 193px 225px 225px 1fr;
+  border: 1px solid var(--ink);
+}
+.case__meta > div { padding: 15px 36px 15px 13px; }
+.case__meta > div + div { border-left: 1px solid var(--ink); }
+.case__meta dt { color: var(--muted); }
+.case__meta dd { margin: 15px 0 0; font-weight: 700; }
+.case__hint { display: none; }
+
+/* Numbered sections, split by an 889px rule */
+.case-section { margin-top: 40px; }
+.case-section:first-of-type { margin-top: 41px; }               /* 01 at y 401 */
+.case-section + .case-section::before {
+  content: "";
+  display: block;
+  width: 889px;
+  max-width: 100%;
+  height: 1px;
+  margin-bottom: 60px;
+  background: var(--ink);
+}
+.case-section__title { display: flex; margin: 0; font-size: inherit; line-height: inherit; font-weight: 700; }
+.case-section__num { flex: none; width: 38px; font-weight: 400; color: var(--muted); }
+.case-section__body { margin-top: 25px; max-width: 1018px; display: grid; gap: var(--line); }
+.case-list { max-width: 1083px; padding-left: 24px; list-style: disc; }
+
+.case-sub { margin: 60px 0 0 38px; max-width: 814px; }          /* indented under the heading */
+.case-sub__title { margin: 0 0 25px; font-size: inherit; line-height: inherit; font-weight: 700; }
+
+.case-sub + .case-sub { margin-top: 40px; }                    /* stacked subsections (solhacks) */
+
+/* Screenshot figures, centered on the page */
+.case-figures {
+  margin: 100px 0 65px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px 53px;
+}
+.case-figure {
+  width: 589px;
+  max-width: 100%;
+  padding: 42px 44px 29px;
+  display: grid;
+  justify-items: center;
+  border: 1px solid currentColor;         /* turns blue with the caption on hover */
+}
+.case-figure:hover { color: var(--link-hover); }
+.case-figure__img { width: 100%; height: auto; }
+.case-figure__caption { margin-top: 36px; font-weight: 700; }
+.case-figure__caption .icon { margin-left: 8px; transition: transform .15s ease; }
+.case-figure:hover .case-figure__caption { text-decoration: underline; text-underline-offset: 3px; }
+.case-figure:hover .case-figure__caption .icon { transform: translate(2px, -2px); }
+
+/* Taller screenshots (500 × 302) keep the 391px frame with tighter padding */
+.case-figure--tall { padding: 33px 44px 17px; }
+.case-figure--tall .case-figure__caption { margin-top: 17px; }
+
+/* Bordered image galleries (figma learn): 1351 × 464 frames, centered on the page */
+.case-gallery {
+  width: 1351px;
+  max-width: 100%;
+  min-height: 464px;
+  margin: 90px auto 0;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--ink);
+}
+.case-gallery img { max-width: 100%; height: auto; }
+.case-gallery + .case-sub { margin-top: 89px; }
+.case-gallery--pair { gap: 75px; }
+.case-gallery--trio { gap: 21px; }
+.case-gallery--trio img { aspect-ratio: 417 / 283; object-fit: cover; }   /* sketches vary slightly; crop to one size */
+.case-gallery__half { display: none; }
+
+/* ASCII bar chart (solhacks results) */
+.case-chart {
+  width: 869px;
+  max-width: 100%;
+  margin: 73px auto 24px;                                       /* centered on the page like the figures */
+  padding: 31px 20px;
+  display: grid;
+  justify-content: center;
+  row-gap: var(--line);                                         /* a blank line between rows */
+  border: 1px solid var(--ink);
+}
+.case-chart__row {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: start;                                       /* don't stretch columns, so bars line up */
+  column-gap: 9px;                                              /* the two spaces in the design */
+  align-items: baseline;
+  white-space: nowrap;
+}
+.case-chart__year { min-width: 2.6em; }                         /* "2025" and "2026" differ slightly; keep the bars aligned */
+.case-chart__bar { font-family: ui-monospace, Menlo, Consolas, monospace; }   /* same-width block glyphs */
+.case-chart__bar-sm { display: none; }
+.case-chart__note { margin: 0; color: var(--muted); }
+
+/* Footer: name, connect links, other case studies */
+.case-footer { background: var(--ink); color: var(--paper); }
+.case-footer__inner {
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 66px 74px 142px;
+  display: grid;
+  grid-template-columns: 507px 283px 283px;                     /* cards at x 647 and 996 */
+  column-gap: 66px;
+  align-items: start;
+}
+.case-footer__links { margin-top: 163px; }                      /* links at footer + 269 */
+.case-footer .work-card { margin-top: 56px; }                   /* index at footer + 122 */
+
+@media (prefers-reduced-motion: reduce) {
+  .case__back .icon, .case-figure__caption .icon { transition: none; }
+}
+
+@media (max-width: 1100px) {
+  .case { padding-left: var(--gutter); padding-right: var(--gutter); }
+  .case-footer__inner { grid-template-columns: repeat(2, 283px); padding-left: var(--gutter); padding-right: var(--gutter); }
+  .case-footer__intro { grid-column: 1 / -1; }
+}
+
+@media (max-width: 760px) {
+  .case { padding: 30px 23px 120px; }
+  .case .clock { top: 30px; right: 10px; }                      /* x 270 in the 402px frame */
+  .case__tags { margin-top: 22px; }                             /* y 72 */
+  .case__title { margin-top: 35px; }                            /* y 127 */
+  .case__subtitle { margin-top: 12px; }                         /* y 178 */
+  .case__meta-scroll { margin: 24px -23px 0 0; scrollbar-width: none; }  /* bleeds off the right edge; the hint replaces the scrollbar */
+  .case__hint { display: block; margin-top: 23px; font-size: 14px; line-height: 17px; color: var(--muted); }
+  .case-section:first-of-type { margin-top: 34px; }             /* 01 at y 426 */
+  .case-section + .case-section::before { margin-bottom: 45px; }
+  .case-section__num { width: 30px; }
+  .case-sub { margin: 40px 0 0; }
+  .case-figures { margin: 40px 0 17px; }
+  .case-figure { width: 307px; padding: 28px 30px 8px; }
+  .case-figure__caption { margin-top: 20px; font-size: 14px; line-height: 17px; }
+  .icon--caption { --icon: url("assets/arrow-caption-sm.svg"); width: 9px; height: 9px; }
+  .case-gallery { width: auto; min-height: 555px; margin-top: 42px; padding: 25px 0; flex-direction: column; }
+  .case-gallery + .case-sub { margin-top: 42px; }
+  .case-gallery--pair { gap: 42px; }
+  .case-gallery--pair img { width: 291px; }
+  .case-gallery--trio img { width: 223px; }
+  .case-gallery__full { display: none; }
+  .case-gallery--wide { gap: 42px; }
+  .case-gallery .case-gallery__half { display: block; width: 320px; height: 211px; object-fit: cover; }   /* one half of the wide image each */
+  .case-gallery__half--left { object-position: left center; }
+  .case-gallery__half--right { object-position: right center; }
+  .case-figure--tall { padding: 18px 30px 8px; }
+  .case-figure--tall .case-figure__caption { margin-top: 11px; }
+
+  /* Chart: label + value on one line, a shorter bar underneath */
+  .case-chart { width: auto; margin: 40px 0 18px; padding: 21px 11px; justify-content: stretch; }
+  .case-chart__row { grid-template-columns: 1fr auto; grid-template-areas: "year value" "bar bar"; }
+  .case-chart__year { grid-area: year; font-size: 14px; line-height: 17px; }
+  .case-chart__value { grid-area: value; font-size: 14px; line-height: 17px; }
+  .case-chart__bar { grid-area: bar; }
+  .case-chart__bar-lg { display: none; }
+  .case-chart__bar-sm { display: inline; }
+  .case-chart__note { font-size: 14px; line-height: 17px; }
+
+  .case-footer__inner { grid-template-columns: 1fr; padding: 63px 23px 148px; }
+  .case-footer__links { margin-top: 55px; gap: 19px; }        /* keep the 39px pitch */
+  .case-footer .work-card { justify-self: center; width: 283px; margin-top: 68px; }
+  .case-footer__intro + .work-card { margin-top: 110px; }
+}
+
+/* ---------- Cursor ring (follows the pointer; mouse/trackpad only) ---------- */
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;                /* centered on the pointer */
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: width .2s ease, height .2s ease, margin .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.cursor-ring.is-visible { opacity: 1; }
+.cursor-ring.is-hovering {                /* grows and turns blue over links */
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  border-color: var(--link-hover);
+}
+.cursor-ring.is-inverted:not(.is-hovering) { border-color: var(--paper); }   /* over the black footer and tab bar */
+@media (hover: none), (pointer: coarse) {
+  .cursor-ring { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor-ring { transition: opacity .2s ease; }
+}
