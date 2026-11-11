@@ -14,7 +14,7 @@
 <body>
   <!-- Case study: nodes 169:424 (desktop), 199:349 (mobile) -->
   <main class="case">
-    <header class="case__head">
+    <header class="case__head" id="overview">
       <a class="case__back" href="index.html#work"><span class="icon icon--back" aria-hidden="true"></span>back to work</a>
       <p class="clock" aria-label="Rodrigo's local time">
         local <time class="clock__time" id="clock">13:21:59</time>
@@ -35,56 +35,75 @@
       <p class="case__hint">swipe for role, timeline, tools, and impact</p>
     </header>
 
-    <section class="case-section">
-      <h2 class="case-section__title"><span class="case-section__num">01</span>Background &amp; Problem</h2>
-      <div class="case-section__body">
-        <p>I joined SAS’s Marketing department as a Summer Design Engineer Intern; the role was extended into a year-round position spanning both design and the frontend code that ships live on sas.com.</p>
-        <p>This case study centers on the two projects that bookend that internship: the customer success story templates I inherited was my first real assignment, and the Trust Hub, the flagship report experience I ended up owning outright. What happened in between is the story of how I earned that trust.</p>
-      </div>
-    </section>
+    <div class="case__layout">
+      <nav class="case-toc" aria-label="On this page">
+        <p class="case-toc__label">On this page</p>
+        <ol class="case-toc__list">
+          <li><a class="case-toc__link" href="#overview">Overview</a></li>
+          <li><a class="case-toc__link" href="#background">Background</a></li>
+          <li><a class="case-toc__link" href="#process">Process</a>
+          <ul class="case-toc__sub">
+            <li><a class="case-toc__link" href="#trust">Trust</a></li>
+          </ul>
+        </li>
+          <li><a class="case-toc__link" href="#results">Results</a></li>
+          <li><a class="case-toc__link" href="#reflection">Reflection</a></li>
+        </ol>
+      </nav>
 
-    <section class="case-section">
-      <h2 class="case-section__title"><span class="case-section__num">02</span>Process</h2>
-      <ul class="case-section__body case-list">
-        <li>My first project was rebuilding SAS’s customer success story page templates in Figma to create a production-ready prototype that is balancing SAS’s brand requirements against AEM’s technical limitations and accessibility compliance. It doubled as an unofficial test of brand fluency: after a few rounds of iteration, I could tell what felt like SAS and what didn’t without being told, and that’s when my manager started trusting me with more.</li>
-        <li>Redesigned the site header’s utility menu, replacing the flag-based country/region selector with a language selector, exploring a globe-icon pill as triggers, with both mobile and desktop treatments.</li>
-        <li>Designed three interactive pop-up modular window concepts for SAS’s 50th Anniversary exhibit: a vitals scrub, a percolation tap grid, and a B-tree roots auto-grow visualization.</li>
-        <li>Owned SAS’s flagship Data &amp; AI 2026 report hub end-to-end, full layout, component architecture, and interaction design from concept through engineering, landing on an editorial “Instrument &amp; Ink” direction after extensive iterative prototyping.</li>
-      </ul>
+      <div class="case__content">
+        <section class="case-section" id="background">
+          <h2 class="case-section__title"><span class="case-section__num">01</span>Background &amp; Problem</h2>
+          <div class="case-section__body">
+            <p>I joined SAS’s Marketing department as a Summer Design Engineer Intern; the role was extended into a year-round position spanning both design and the frontend code that ships live on sas.com.</p>
+            <p>This case study centers on the two projects that bookend that internship: the customer success story templates I inherited was my first real assignment, and the Trust Hub, the flagship report experience I ended up owning outright. What happened in between is the story of how I earned that trust.</p>
+          </div>
+        </section>
 
-      <div class="case-sub">
-        <h3 class="case-sub__title">Trust</h3>
-        <p>The Trust Hub’s first iteration was due in a week, which was too tight for any low-fidelity work or sketching, so I went straight into high-fidelity design using only the previous year’s report page as a reference. After a full day, I delivered a full design and my manager told me afterward that he fully trusted my work and was genuinely impressed by how fast I’d picked up SAS’s design language. Everything after that was refinement. Currently, the final version lives on sas.com as “The Impact of Trust”.</p>
-      </div>
+        <section class="case-section" id="process">
+          <h2 class="case-section__title"><span class="case-section__num">02</span>Process</h2>
+          <ul class="case-section__body case-list">
+            <li>My first project was rebuilding SAS’s customer success story page templates in Figma to create a production-ready prototype that is balancing SAS’s brand requirements against AEM’s technical limitations and accessibility compliance. It doubled as an unofficial test of brand fluency: after a few rounds of iteration, I could tell what felt like SAS and what didn’t without being told, and that’s when my manager started trusting me with more.</li>
+            <li>Redesigned the site header’s utility menu, replacing the flag-based country/region selector with a language selector, exploring a globe-icon pill as triggers, with both mobile and desktop treatments.</li>
+            <li>Designed three interactive pop-up modular window concepts for SAS’s 50th Anniversary exhibit: a vitals scrub, a percolation tap grid, and a B-tree roots auto-grow visualization.</li>
+            <li>Owned SAS’s flagship Data &amp; AI 2026 report hub end-to-end, full layout, component architecture, and interaction design from concept through engineering, landing on an editorial “Instrument &amp; Ink” direction after extensive iterative prototyping.</li>
+          </ul>
 
-      <div class="case-figures">
-        <a class="case-figure" href="https://www.figma.com/design/ojtjZQxUkL84WSLEDpnDrL/Customer-Story-Template-Designs?node-id=0-1" target="_blank" rel="noopener">
-          <img class="case-figure__img" src="images/sas-customer-success.png" width="500" height="264"
-              alt="Figma canvas of the customer success story page templates">
-          <span class="case-figure__caption">Customer Success Page<span class="icon icon--caption" aria-hidden="true"></span></span>
-        </a>
-        <a class="case-figure" href="https://www.figma.com/design/RkcIUQLn2Nz2f2cf21oxFE/Data---AI-Report-Redesign--%3E-Hub?node-id=0-1" target="_blank" rel="noopener">
-          <img class="case-figure__img" src="images/sas-trust-hub.png" width="500" height="262"
-              alt="Figma canvas of the Trust Hub report pages">
-          <span class="case-figure__caption">Trust Hub<span class="icon icon--caption" aria-hidden="true"></span></span>
-        </a>
-      </div>
-    </section>
+          <div class="case-sub">
+            <h3 class="case-sub__title" id="trust">Trust</h3>
+            <p>The Trust Hub’s first iteration was due in a week, which was too tight for any low-fidelity work or sketching, so I went straight into high-fidelity design using only the previous year’s report page as a reference. After a full day, I delivered a full design and my manager told me afterward that he fully trusted my work and was genuinely impressed by how fast I’d picked up SAS’s design language. Everything after that was refinement. Currently, the final version lives on sas.com as “The Impact of Trust”.</p>
+          </div>
 
-    <section class="case-section">
-      <h2 class="case-section__title"><span class="case-section__num">03</span>Results</h2>
-      <div class="case-section__body">
-        <p>The customer success templates and header redesign shipped live on sas.com under the real AEM and accessibility constraints gathering 50k + views, and the Trust Hub’s survey interactive ran on real questions from the actual report, alongside a shareable trust-profile card.</p>
-        <p>That growing trust is also what turned a Summer internship into a year-round role, the fastest, clearest signal that the work was landing the way I meant it to.</p>
-      </div>
-    </section>
+          <div class="case-figures">
+            <a class="case-figure" href="https://www.figma.com/design/ojtjZQxUkL84WSLEDpnDrL/Customer-Story-Template-Designs?node-id=0-1" target="_blank" rel="noopener">
+              <img class="case-figure__img" src="images/sas-customer-success.png" width="500" height="264"
+                  alt="Figma canvas of the customer success story page templates">
+              <span class="case-figure__caption">Customer Success Page<span class="icon icon--caption" aria-hidden="true"></span></span>
+            </a>
+            <a class="case-figure" href="https://www.figma.com/design/RkcIUQLn2Nz2f2cf21oxFE/Data---AI-Report-Redesign--%3E-Hub?node-id=0-1" target="_blank" rel="noopener">
+              <img class="case-figure__img" src="images/sas-trust-hub.png" width="500" height="262"
+                  alt="Figma canvas of the Trust Hub report pages">
+              <span class="case-figure__caption">Trust Hub<span class="icon icon--caption" aria-hidden="true"></span></span>
+            </a>
+          </div>
+        </section>
 
-    <section class="case-section">
-      <h2 class="case-section__title"><span class="case-section__num">04</span>Reflection &amp; Next Steps</h2>
-      <div class="case-section__body">
-        <p>The real through-line across this internship wasn't any single deliverable, but instead the trust I built, project by project. It started with a manager testing whether I understood SAS's brand well enough to work inside it, and it ended with him handing me a flagship report and stepping back. Going into my next role, I want to start further along that curve by spending less time earning the benefit of the doubt and more time doing the ambiguous, high-stakes work outright.</p>
+        <section class="case-section" id="results">
+          <h2 class="case-section__title"><span class="case-section__num">03</span>Results</h2>
+          <div class="case-section__body">
+            <p>The customer success templates and header redesign shipped live on sas.com under the real AEM and accessibility constraints gathering 50k + views, and the Trust Hub’s survey interactive ran on real questions from the actual report, alongside a shareable trust-profile card.</p>
+            <p>That growing trust is also what turned a Summer internship into a year-round role, the fastest, clearest signal that the work was landing the way I meant it to.</p>
+          </div>
+        </section>
+
+        <section class="case-section" id="reflection">
+          <h2 class="case-section__title"><span class="case-section__num">04</span>Reflection &amp; Next Steps</h2>
+          <div class="case-section__body">
+            <p>The real through-line across this internship wasn't any single deliverable, but instead the trust I built, project by project. It started with a manager testing whether I understood SAS's brand well enough to work inside it, and it ended with him handing me a flagship report and stepping back. Going into my next role, I want to start further along that curve by spending less time earning the benefit of the doubt and more time doing the ambiguous, high-stakes work outright.</p>
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
   </main>
 
   <!-- Footer: name, connect links, and the other case studies -->
@@ -103,23 +122,25 @@
 
       <a class="work-card" href="figma-learn.html">
         <span class="work-card__index">01</span>
-        <span class="work-card__frame">
-          <img src="assets/figma-icon-white.svg" width="60" height="86" alt="Figma">
+        <span class="work-card__frame work-card__frame--shot">
+          <img src="images/thumb-figma-learn.jpg" width="566" height="556" alt="" loading="lazy">
         </span>
         <span class="work-card__meta">
           <span class="work-card__title">Figma Learn</span>
-          <span>Capstone Project</span>
+          <span class="work-card__role">Capstone Project</span>
+          <span class="work-card__blurb">An in-app learning system, built inside Figma itself</span>
           <span class="work-card__arrow icon icon--arrow" aria-hidden="true"></span>
         </span>
       </a>
       <a class="work-card" href="solhacks.html">
         <span class="work-card__index">02</span>
-        <span class="work-card__frame">
-          <img class="work-card__solhacks" src="assets/solhacks-white.png" width="129" height="35" alt="SolHacks">
+        <span class="work-card__frame work-card__frame--shot">
+          <img src="images/thumb-solhacks.jpg" width="566" height="556" alt="" loading="lazy">
         </span>
         <span class="work-card__meta">
           <span class="work-card__title">SolHacks</span>
-          <span>Executive Director</span>
+          <span class="work-card__role">Executive Director</span>
+          <span class="work-card__blurb">Growing a student hackathon from 66 to 150+ attendees</span>
           <span class="work-card__arrow icon icon--arrow" aria-hidden="true"></span>
         </span>
       </a>
