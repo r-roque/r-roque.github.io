@@ -69,3 +69,41 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
   });
   document.documentElement.addEventListener("pointerleave", () => ring.classList.remove("is-visible"));
 }
+
+// Case study sidebar: mark the section currently in view and keep its chip visible on small screens
+const toc = document.querySelector(".case-toc");
+if (toc) {
+  const links = [...toc.querySelectorAll(".case-toc__link")];
+  const targets = links.map((a) => document.getElementById(a.hash.slice(1)));
+  let current = null, queued = false;
+  function syncToc() {
+    queued = false;
+    const line = window.innerHeight * 0.3;
+    let index = 0;
+    targets.forEach((t, i) => { if (t && t.getBoundingClientRect().top <= line) index = i; });
+    // at the very bottom, light up the last entry even if it's short
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      index = targets.findLastIndex((t) => t && t.closest(".case__content") && !t.matches(".case-sub__title"));
+      if (index < 0) index = targets.length - 1;
+    }
+    let link = links[index];
+    // sub-entries are hidden in the mobile chip row; light up their parent instead
+    if (!link.offsetParent) link = link.closest(".case-toc__sub").closest("li").querySelector(".case-toc__link");
+    if (link === current) return;
+    current?.removeAttribute("aria-current");
+    link.setAttribute("aria-current", "true");
+    current = link;
+    // horizontal chip row: scroll the active chip into view without moving the page
+    if (toc.scrollWidth > toc.clientWidth) {
+      const chip = link.getBoundingClientRect(), bar = toc.getBoundingClientRect();
+      if (chip.left < bar.left || chip.right > bar.right) {
+        toc.scrollLeft += chip.left - bar.left - 24;
+      }
+    }
+  }
+  document.addEventListener("scroll", () => {
+    if (!queued) { queued = true; requestAnimationFrame(syncToc); }
+  }, { passive: true });
+  window.addEventListener("resize", syncToc);
+  syncToc();
+}
