@@ -40,60 +40,78 @@
         <p class="case-toc__label">On this page</p>
         <ol class="case-toc__list">
           <li><a class="case-toc__link" href="#overview">Overview</a></li>
-          <li><a class="case-toc__link" href="#background">Background</a></li>
+          <li><a class="case-toc__link" href="#context">Context</a></li>
+          <li><a class="case-toc__link" href="#opportunity">Opportunity</a></li>
           <li><a class="case-toc__link" href="#process">Process</a>
-          <ul class="case-toc__sub">
-            <li><a class="case-toc__link" href="#user-personas">User Personas</a></li>
-            <li><a class="case-toc__link" href="#low-fidelity-mockups">Low-Fidelity Mockups</a></li>
-            <li><a class="case-toc__link" href="#iteration">Iteration</a></li>
-            <li><a class="case-toc__link" href="#prototype">Prototype</a></li>
-          </ul>
-        </li>
-          <li><a class="case-toc__link" href="#results">Results</a></li>
+            <ul class="case-toc__sub">
+              <li><a class="case-toc__link" href="#user-personas">User Personas</a></li>
+              <li><a class="case-toc__link" href="#low-fidelity-mockups">Low-Fidelity Mockups</a></li>
+              <li><a class="case-toc__link" href="#iteration">Iteration</a></li>
+              <li><a class="case-toc__link" href="#prototype">Prototype</a></li>
+            </ul>
+          </li>
+          <li><a class="case-toc__link" href="#impact">Impact</a></li>
           <li><a class="case-toc__link" href="#reflection">Reflection</a></li>
         </ol>
       </nav>
 
       <div class="case__content">
-        <section class="case-section" id="background">
-          <h2 class="case-section__title"><span class="case-section__num">01</span>Background &amp; Problem</h2>
+        <section class="case-section" id="context">
+          <p class="case-section__eyebrow"><span class="case-section__num">01</span>Context</p>
+          <h2 class="case-section__headline">Figma’s learning resources all live outside Figma.</h2>
           <div class="case-section__body">
-            <p>For MEJO 581, I ran a UX competitive analysis across six sites (including Stripe, Axios, and Are.na) built around a thesis: user-centered design and product-centered design produce genuinely different outcomes, not just different processes.</p>
-            <p>Figma Learn was the follow-through on my thesis. Figma’s own learning resources like docs, YouTube tutorials, and community files all live outside the tool, forcing beginners onto YouTube, Reddit, and third-party documentation just to understand the basics. I traced that gap through direct observation: App Team Carolina’s UI/UX Academy, Information Science and MEJO classrooms, Figma Community forums, r/figma, and the r/learndesign subreddits all showing the same pattern. Self-taught learners who couldn’t find a starting point inside the tool itself. “Knowing where to start... there are so many tools,” as one interviewee put it; another simply said, “I don’t know what I can do on Figma.” The idea I built toward is that the best place to learn a tool is inside the tool itself.</p>
+            <p>For MEJO 581, I ran a UX competitive analysis across six sites (including Stripe, Axios, and Are.na) built around a thesis: user-centered design and product-centered design produce genuinely different outcomes, not just different processes. Figma Learn was the follow-through on that thesis.</p>
+            <p>Figma’s own learning resources like docs, YouTube tutorials, and community files all live outside the tool, forcing beginners onto YouTube, Reddit, and third-party documentation just to understand the basics.</p>
+            <p>I traced that gap through direct observation: App Team Carolina’s UI/UX Academy, Information Science and MEJO classrooms, Figma Community forums, r/figma, and r/learndesign all showed the same pattern. Self-taught learners couldn’t find a starting point inside the tool itself.</p>
+          </div>
+        </section>
+
+        <section class="case-section" id="opportunity">
+          <p class="case-section__eyebrow"><span class="case-section__num">02</span>Opportunity</p>
+          <h2 class="case-section__headline">The best place to learn a tool is inside the tool.</h2>
+          <div class="case-section__body">
+            <blockquote class="case-quote">“Knowing where to start... there are so many tools.”</blockquote>
+            <blockquote class="case-quote">“I don’t know what I can do on Figma.”</blockquote>
+            <blockquote class="case-hmw">How might we help self-taught beginners learn Figma without ever leaving Figma?</blockquote>
           </div>
         </section>
 
         <section class="case-section" id="process">
-          <h2 class="case-section__title"><span class="case-section__num">02</span>Process</h2>
+          <p class="case-section__eyebrow"><span class="case-section__num">03</span>Process</p>
+          <h2 class="case-section__headline">A learning path that feels native to Figma.</h2>
           <ul class="case-section__body case-list">
-            <li>Ran two in-depth interviews (Nina, a MEJO major exploring UX through App Team Carolina; Aaron, an Information Science major who switched from pre-dental to UX; and one AI-assisted composite interview to surface patterns across a broader self-taught-learner archetype, then built personas and a spectrum map across all three.</li>
-            <li>Benchmarked against Duolingo (self-paced, gamified progression, but not contextual to a design tool), Codecademy (learn-by-doing, but a separate platform that still requires leaving Figma), and Figma’s own Community (has templates and resources, but no structured path, most users don’t know it exists or how to use it for learning).</li>
-            <li>Designed the full skill-track architecture — Beginner Track through Foundations, Components &amp; Auto Layout, Prototyping Interactions, and a Capstone — with locked/unlocked progression, a video-plus-live-canvas-practice lesson format, and a badge and profile system to make progress visible.</li>
+            <li>Ran two in-depth interviews (Nina, a MEJO major exploring UX through App Team Carolina, and Aaron, an Information Science major who switched from pre-dental to UX) plus one AI-assisted composite interview to surface patterns across a broader self-taught-learner archetype. Then built personas and a spectrum map across all three.</li>
+            <li>Benchmarked against Duolingo (self-paced, gamified progression, but not contextual to a design tool), Codecademy (learn-by-doing, but a separate platform that still requires leaving Figma), and Figma’s own Community (templates and resources, but no structured path, and most users don’t know it exists or how to use it for learning).</li>
+            <li>Designed the full skill-track architecture, from the Beginner Track through Foundations, Components &amp; Auto Layout, Prototyping Interactions, and a Capstone, with locked/unlocked progression, a video-plus-live-canvas-practice lesson format, and a badge and profile system to make progress visible.</li>
             <li>Ran three usability testing sessions on the interactive prototype via UserTesting.com.</li>
           </ul>
 
           <div class="case-sub">
             <h3 class="case-sub__title" id="user-personas">User Personas</h3>
-            <p>Two real-world interviews were conducted on students who recently decided to commit themselves to the UX field and trying to gain professional experience for their portfolio. Through this, I was able to capture similarities in what pain points new users to Figma were experiencing which started to build my case for why Figma Learn was the solution to be made.</p>
+            <p>I interviewed two students who had recently committed to the UX field and were trying to gain professional experience for their portfolios. Their pain points as new Figma users overlapped, and that started to build my case for Figma Learn.</p>
           </div>
           <div class="case-gallery case-gallery--pair">
             <img src="images/figma-learn-persona-1.png" width="528" height="381" alt="User persona card for Nina, a MEJO major exploring UX">
             <img src="images/figma-learn-persona-2.png" width="528" height="381" alt="User persona card for Aaron, an Information Science major">
           </div>
+          <p class="case-caption">Personas for Nina and Aaron, built from the two interviews.</p>
 
           <div class="case-sub">
             <h3 class="case-sub__title" id="low-fidelity-mockups">Low-Fidelity Mockups</h3>
-            <p>Once I had the idea, I always like to diverge my ideas and sketch out anything that comes to mind before converging on a single system that will be carried throughout my prototype.</p>
+            <p>Once I had the idea, I diverged first, sketching anything that came to mind, before converging on a single system to carry through the prototype.</p>
           </div>
           <div class="case-gallery case-gallery--trio">
             <img src="images/figma-learn-sketch-1.jpg" width="417" height="283" alt="Hand-drawn wireframes of the Figma home screen, Learning Hub, track page, and tutorial intro card">
             <img src="images/figma-learn-sketch-2.jpg" width="417" height="283" alt="Hand-drawn wireframes of lesson and practice screens">
             <img src="images/figma-learn-sketch-3.jpg" width="417" height="283" alt="Hand-drawn wireframes of completion, badge, and profile screens">
           </div>
+          <p class="case-caption">Low-fidelity sketches of the Learning Hub, lessons, and completion flow.</p>
 
           <div class="case-sub">
             <h3 class="case-sub__title" id="iteration">Iteration</h3>
-            <p>Testing was consistently positive on the concept, one tester called the prototype "very rare" among quality design tools, but surfaced two concrete friction points. Testers repeatedly lost their way trying to find their progress and badges, so I added a persistent "View Profile" button directly in the Learning Hub instead of relying on sidebar navigation alone. Testers were also unsure whether they were meant to actively complete tasks or just click through the prototype, so I tightened the interaction wiring between the tutorial, practice, and completion screens so the path forward was never ambiguous.</p>
+            <p>Testing was consistently positive on the concept (one tester called the prototype "very rare" among quality design tools) but surfaced two concrete friction points.</p>
+            <p>Testers repeatedly lost their way trying to find their progress and badges, so I added a persistent "View Profile" button directly in the Learning Hub instead of relying on sidebar navigation alone.</p>
+            <p>Testers were also unsure whether they were meant to actively complete tasks or just click through the prototype, so I tightened the interaction wiring between the tutorial, practice, and completion screens so the path forward was never ambiguous.</p>
           </div>
           <!-- One wide image on desktop; on mobile it splits into its left and right halves -->
           <div class="case-gallery case-gallery--wide">
@@ -101,6 +119,7 @@
             <img class="case-gallery__half case-gallery__half--left" src="images/figma-learn-iteration.png" width="320" height="211" alt="Learning Hub before the change">
             <img class="case-gallery__half case-gallery__half--right" src="images/figma-learn-iteration.png" width="320" height="211" alt="Learning Hub after adding the View Profile button">
           </div>
+          <p class="case-caption">Before and after: a persistent View Profile button in the Learning Hub.</p>
 
           <div class="case-sub">
             <h3 class="case-sub__title" id="prototype">Prototype</h3>
@@ -116,18 +135,22 @@
           </div>
         </section>
 
-        <section class="case-section" id="results">
-          <h2 class="case-section__title"><span class="case-section__num">03</span>Results</h2>
+        <section class="case-section" id="impact">
+          <p class="case-section__eyebrow"><span class="case-section__num">04</span>Impact</p>
+          <h2 class="case-section__headline">A 13-screen prototype, validated in three usability tests.</h2>
           <div class="case-section__body">
-            <p>The finished project shipped with full documentation and a LinkedIn post strategy aimed specifically at Figma employees, treating this less like a class assignment and more like a pitch.</p>
-            <p>The delivered prototype covers the full arc from onboarding to capstone: a Learning Hub with skill tracks and locked/unlocked states, step-by-step tutorials pairing video with live practice on the real canvas, lesson-completion screens with earned badges (Canvas Navigator, Frame Builder, Type Setter, Constraints Pro, Grid Wizard), a resume flow that picks users back up mid-lesson, a profile page tracking lessons done and time spent, and a capstone that bridges into the Figma Community. Across three usability testing sessions, feedback on the core premise was consistently positive, and both friction points that testing surfaced were resolved before the design was finalized.</p>
+            <p>The delivered prototype covers the full arc from onboarding to capstone: a Learning Hub with skill tracks and locked/unlocked states, step-by-step tutorials pairing video with live practice on the real canvas, lesson-completion screens with earned badges (Canvas Navigator, Frame Builder, Type Setter, Constraints Pro, Grid Wizard), a resume flow that picks users back up mid-lesson, a profile page tracking lessons done and time spent, and a capstone that bridges into the Figma Community.</p>
+            <p>Across three usability testing sessions, feedback on the core premise was consistently positive, and both friction points that testing surfaced were resolved before the design was finalized.</p>
+            <p>The finished project shipped with full documentation and a LinkedIn post strategy aimed specifically at Figma employees, treating it less like a class assignment and more like a pitch.</p>
           </div>
         </section>
 
         <section class="case-section" id="reflection">
-          <h2 class="case-section__title"><span class="case-section__num">04</span>Reflection &amp; Next Steps</h2>
+          <p class="case-section__eyebrow"><span class="case-section__num">05</span>Reflection</p>
+          <h2 class="case-section__headline">Designing inside someone else’s design language.</h2>
           <div class="case-section__body">
-            <p>Figma Learn is the one case study of the three that's purely conceptual rather than shipped. The real constraint here was designing entirely within Figma's own visual language and component system rather than from a blank canvas. Every screen had to look and behave like it already belonged in the product. Actually shipping this would take partnership with Figma's design and education teams, backend work to track real progress across sessions, and usability testing well beyond the three rounds I ran here.</p>
+            <p>Figma Learn is the one case study of the three that’s purely conceptual rather than shipped. The real constraint was designing entirely within Figma’s own visual language and component system rather than from a blank canvas. Every screen had to look and behave like it already belonged in the product.</p>
+            <p>Actually shipping this would take partnership with Figma’s design and education teams, backend work to track real progress across sessions, and usability testing well beyond the three rounds I ran here.</p>
           </div>
         </section>
       </div>
@@ -150,25 +173,23 @@
 
       <a class="work-card" href="sas.html">
         <span class="work-card__index">00</span>
-        <span class="work-card__frame work-card__frame--shot">
-          <img src="images/thumb-sas.jpg" width="566" height="556" alt="" loading="lazy">
+        <span class="work-card__frame">
+          <img src="assets/sas-logo-white.svg" width="104" alt="SAS">
         </span>
         <span class="work-card__meta">
           <span class="work-card__title">SAS Institute</span>
-          <span class="work-card__role">Design Engineer Intern</span>
-          <span class="work-card__blurb">Shipped customer story templates and the Trust Hub on sas.com</span>
+          <span>Design Engineer Intern</span>
           <span class="work-card__arrow icon icon--arrow" aria-hidden="true"></span>
         </span>
       </a>
       <a class="work-card" href="solhacks.html">
         <span class="work-card__index">02</span>
-        <span class="work-card__frame work-card__frame--shot">
-          <img src="images/thumb-solhacks.jpg" width="566" height="556" alt="" loading="lazy">
+        <span class="work-card__frame">
+          <img class="work-card__solhacks" src="assets/solhacks-white.png" width="129" height="35" alt="SolHacks">
         </span>
         <span class="work-card__meta">
           <span class="work-card__title">SolHacks</span>
-          <span class="work-card__role">Executive Director</span>
-          <span class="work-card__blurb">Growing a student hackathon from 66 to 150+ attendees</span>
+          <span>Executive Director</span>
           <span class="work-card__arrow icon icon--arrow" aria-hidden="true"></span>
         </span>
       </a>
