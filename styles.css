@@ -3,7 +3,7 @@
   --ink: #000;
   --paper: #fff;
   --nav-bg: #232323;
-  --nav-active: #7d9fe9;
+  --nav-active: #d32f2f;             /* active nav pill: white text on it is 5:1, and it stands out 3.2:1 from the dark bar */
   --nav-text: #fff;
   --muted: #8b8b8b;
   --muted-strong: #6b6b6b;           /* 5.3:1 on white, for smaller supporting text */
@@ -35,7 +35,7 @@ body {
 p, h1, ul { margin: 0; }
 ul { padding: 0; list-style: none; }
 a { color: inherit; text-decoration: none; }
-/* Arrow icons: the SVGs are used as masks so they take the text color (black, white, or hover blue) */
+/* Arrow icons: the SVGs are used as masks so they take the text color (black, white, or hover red) */
 .icon {
   display: inline-block;
   flex: none;
@@ -201,7 +201,7 @@ a.project-card:hover .project-card__desc { color: var(--ink); }
   display: grid;
   place-items: center;
   aspect-ratio: 283 / 278;
-  border: 1px solid currentColor;         /* turns blue with the text on hover */
+  border: 1px solid currentColor;         /* turns red with the text on hover */
   transition: border-color .15s ease;
 }
 .work-card__solhacks { height: 35.25px; } /* PNG is stretched to fit, as in Figma */
@@ -293,7 +293,7 @@ a.project-card:hover .project-card__desc { color: var(--ink); }
   color: var(--nav-text);
   transition: color .2s ease;
 }
-.tabbar__tab[aria-current="page"] { color: var(--ink); }
+.tabbar__tab[aria-current="page"] { color: var(--paper); }
 .tabbar__tab:not([aria-current="page"]):hover { color: var(--link-hover-on-dark); }
 
 @media (prefers-reduced-motion: reduce) {
@@ -427,7 +427,7 @@ a.project-card:hover .project-card__desc { color: var(--ink); }
 .case-hmw, .case-quote { margin: 0; max-width: 760px; }
 .case-hmw {
   padding: 4px 0 4px 20px;
-  border-left: 3px solid var(--nav-active);
+  border-left: 3px solid var(--link-hover);
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;
@@ -461,7 +461,7 @@ a.project-card:hover .project-card__desc { color: var(--ink); }
   padding: 42px 44px 29px;
   display: grid;
   justify-items: center;
-  border: 1px solid currentColor;         /* turns blue with the caption on hover */
+  border: 1px solid currentColor;         /* turns red with the caption on hover */
 }
 .case-figure:hover { color: var(--link-hover); }
 .case-figure__img { width: 100%; height: auto; }
@@ -551,7 +551,7 @@ html { scroll-behavior: smooth; }
   color: var(--muted-strong);
 }
 .case-toc__link:hover { color: var(--link-hover); }
-.case-toc__link[aria-current="true"] { color: var(--ink); font-weight: 600; border-left-color: var(--nav-active); }
+.case-toc__link[aria-current="true"] { color: var(--ink); font-weight: 600; border-left-color: var(--link-hover); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -581,7 +581,7 @@ html { scroll-behavior: smooth; }
     border-radius: 20px;
     white-space: nowrap;
   }
-  .case-toc__link[aria-current="true"] { border-color: var(--nav-active); background: var(--nav-active); }
+  .case-toc__link[aria-current="true"] { border-color: var(--link-hover); background: var(--link-hover); color: var(--paper); }   /* white on dark red, 8.2:1 */
 }
 @media (max-width: 760px) {
   .case { --case-pad: 23px; }
