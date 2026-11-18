@@ -123,19 +123,51 @@ a:focus-visible { outline: 2px solid var(--nav-active); outline-offset: 3px; bor
   margin: 50px auto 0;                    /* y 471, centered under the bio */
 } 
 
-/* ---------- Work view (node 30:68) ---------- */
-/* Cards start at x 269, so the left track shrinks to 223px (269 − gutter) */
-.page:is([data-view="work"], [data-view="misc"]) { grid-template-columns: 223px 1fr; }
+/* ---------- Work view (node 255:131, port/2) ---------- */
+/* Two 560px columns at x 304 and 917 (53px gutter), right edge at 1477 */
+.page[data-view="work"] { grid-template-columns: 258px 1fr; padding-right: 35px; }
+.page[data-view="misc"] { grid-template-columns: 223px 1fr; }
 .page:is([data-view="work"], [data-view="misc"]) .intro { width: 483px; }   /* keep the name on two lines */
-.work { margin-top: 273px; }              /* index labels at y 326 */
+.work { margin-top: 168px; }              /* first row at y 221 */
 .work__list {
   margin: 0;
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 283px);
-  column-gap: 62px;                       /* 345px card pitch */
+  grid-template-columns: repeat(2, minmax(0, 560px));
+  gap: 52px 53px;                         /* 400px row pitch */
 }
+
+/* Project card: video preview box (560 × 279) over a 69px caption bar */
+.project-card { display: grid; grid-template-rows: auto 1fr; height: 100%; }   /* captions stretch so a row lines up */
+.project-card__preview {
+  display: block;
+  aspect-ratio: 560 / 279;
+  overflow: hidden;
+  border: 1px solid currentColor;
+  border-bottom: 0;                       /* the caption's top border is the divider */
+  background: #000;                       /* matches the letterboxing in the clips */
+}
+.project-card__video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-card__caption {
+  display: grid;
+  align-content: start;
+  row-gap: 5px;                           /* description y +25 */
+  min-height: 69px;
+  padding: 10px 11px 12px;                /* title at y +11, x +12 inside the 1px border */
+  border: 1px solid currentColor;
+}
+.project-card__title { font-weight: 600; }
+a.project-card:hover { color: var(--link-hover); }
+a.project-card:hover .project-card__title { text-decoration: underline; text-underline-offset: 3px; }
+a.project-card:hover .project-card__desc { color: var(--ink); }
+
+/* Case-study footers still use the original logo cards */
 .work-card { display: grid; }
 .work-card__index { font-weight: 700; }
 .work-card__frame {
@@ -246,10 +278,10 @@ a:focus-visible { outline: 2px solid var(--nav-active); outline-offset: 3px; bor
 @media (max-width: 1100px) {
   .page { grid-template-columns: minmax(200px, 1fr) minmax(0, 429px) minmax(0, 1fr); column-gap: 32px; }
   /* Work: stack the cards under the intro and let them wrap */
-  .page:is([data-view="work"], [data-view="misc"]) { grid-template-columns: 1fr; }
+  .page:is([data-view="work"], [data-view="misc"]) { grid-template-columns: 1fr; padding-right: var(--gutter); }
   .page:is([data-view="work"], [data-view="misc"]) .intro { width: auto; }
   .work { margin-top: 56px; }
-  .work__list { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 40px 32px; }
+  .work__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
   .misc { margin-top: 56px; }
   .misc__list { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); grid-auto-rows: minmax(220px, auto); gap: 32px; }
   .misc__item--wide { grid-column: 1 / -1; }
@@ -289,8 +321,8 @@ a:focus-visible { outline: 2px solid var(--nav-active); outline-offset: 3px; bor
 
   /* Work + misc: fixed 283px cards, centered */
   .page:is([data-view="work"], [data-view="misc"]) .intro { width: auto; }
-  .work { margin-top: 88px; }                           /* 00 label y 463 */
-  .work__list { grid-template-columns: 283px; justify-content: center; gap: 68px 0; }
+  .work { margin-top: 56px; }
+  .work__list { grid-template-columns: 1fr; gap: 40px 0; }
   .work-card__arrow { top: 20px; }
   .misc { margin-top: 125px; }                          /* first card y 500 */
   .misc__list {
