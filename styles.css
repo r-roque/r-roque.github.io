@@ -115,14 +115,32 @@ a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 3px; bor
 .welcome { margin-top: 168px; }           /* y 221 */
 .welcome__bio { display: grid; gap: var(--line); }   /* one blank line between paragraphs */
 .welcome__art {
+  position: relative;
   display: block;
   width: 406px;                           /* 325px × 1.25 */
   max-width: 100%;
   aspect-ratio: 1;                        /* square crop */
-  object-fit: cover;
-  height: auto;
   margin: 50px auto 0;                    /* y 471, centered under the bio */
-} 
+  padding: 0;
+  border: 0;
+  background: none;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.welcome__art-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* The photo is resized to the ASCII render's exact frame, so the two line up */
+.welcome__art-photo { opacity: 0; transition: opacity .35s ease; }
+.welcome__art:hover .welcome__art-photo,
+.welcome__art:focus-visible .welcome__art-photo,
+.welcome__art[aria-pressed="true"] .welcome__art-photo { opacity: 1; }
+.welcome__art:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 3px; }
 
 /* ---------- Work view (node 255:131, port/2) ---------- */
 /* Two 560px columns at x 304 and 917 (53px gutter), right edge at 1477 */
@@ -279,7 +297,7 @@ a.project-card:hover .project-card__desc { color: var(--ink); }
 .tabbar__tab:not([aria-current="page"]):hover { color: var(--link-hover-on-dark); }
 
 @media (prefers-reduced-motion: reduce) {
-  .tabbar__indicator, .tabbar__tab, .connect__link .icon, .work-card__arrow, .misc-card__link .icon { transition: none; }
+  .tabbar__indicator, .tabbar__tab, .welcome__art-photo, .connect__link .icon, .work-card__arrow, .misc-card__link .icon { transition: none; }
 }
 
 /* ---------- Tablet: keep two columns, let them flex ---------- */
@@ -323,9 +341,9 @@ a.project-card:hover .project-card__desc { color: var(--ink); }
   .welcome__art {
     width: 325px;
     aspect-ratio: 325 / 344;
-    object-position: 55% center;                        /* Figma crop sits a bit right of center */
     margin-top: 51px;                                   /* art y 700 */
   }
+  .welcome__art-img { object-position: 55% center; }   /* Figma crop sits a bit right of center */
 
   /* Work + misc: fixed 283px cards, centered */
   .page:is([data-view="work"], [data-view="misc"]) .intro { width: auto; }

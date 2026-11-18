@@ -125,3 +125,10 @@ if (previews.length) {
     else previews.forEach((v) => { io.unobserve(v); io.observe(v); });   // re-check what's on screen
   });
 }
+
+// Home portrait: hover or keyboard focus crossfades to the original photo (CSS);
+// a click or tap pins it, which is how touch screens see it
+const portrait = document.querySelector(".welcome__art");
+portrait?.addEventListener("click", () => {
+  portrait.setAttribute("aria-pressed", String(portrait.getAttribute("aria-pressed") !== "true"));
+});

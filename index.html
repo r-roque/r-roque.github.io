@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&family=Michroma&display=swap" rel="stylesheet">
   <link rel="icon" href="star.ico">
-  <link rel="stylesheet" href="styles.css?v=2026-11-18c">
+  <link rel="stylesheet" href="styles.css?v=2026-11-18d">
 </head>
 <body>
   <div class="page">
@@ -41,8 +41,12 @@
         <p>outside of that I play guitar, dj, and draw!</p>
         <p>currently still deciding if the ascii art was a good idea, <br>you tell me.</p>
       </div>
-      <img class="welcome__art" src="images/ascii-art.png" width="325" height="344"
-          alt="ASCII-character portrait of Rodrigo">
+      <!-- ASCII portrait; hover, focus or tap reveals the original photo -->
+      <button class="welcome__art" type="button" aria-pressed="false"
+          aria-label="Portrait of Rodrigo in ASCII characters. Press to show the original photo.">
+        <img class="welcome__art-img" src="images/ascii-art.webp" width="1200" height="822" alt="">
+        <img class="welcome__art-img welcome__art-photo" src="images/portrait-photo.webp" width="1200" height="822" alt="" loading="lazy">
+      </button>
     </main>
 
     <!-- Work view: node 255:131 (port/2) — two-column grid of video preview cards -->
@@ -187,6 +191,6 @@
     <a class="tabbar__tab" href="#misc">misc</a>
   </nav>
 
-  <script src="main.js?v=2026-11-18c" defer></script>
+  <script src="main.js?v=2026-11-18d" defer></script>
 </body>
 </html>
