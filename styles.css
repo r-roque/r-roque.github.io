@@ -7,7 +7,8 @@
   --nav-text: #fff;
   --muted: #8b8b8b;
   --muted-strong: #6b6b6b;           /* 5.3:1 on white, for smaller supporting text */
-  --link-hover: var(--nav-active);   /* blue accent for hovered links, arrows, and frames */
+  --link-hover: #9b1c1c;             /* dark red for hovered links, arrows, and frames: 8.2:1 on white */
+  --link-hover-on-dark: #ff8a8a;     /* the same red, lightened for the black footer and tab bar: 9.3:1 on black */
 
   --font-body: "Instrument Sans", system-ui, sans-serif;
   --font-display: "Michroma", "Instrument Sans", sans-serif;
@@ -47,7 +48,7 @@ a { color: inherit; text-decoration: none; }
 .icon--caption { --icon: url("assets/arrow-caption.svg"); width: 11px; height: 11px; }
 
 a { transition: color .15s ease, border-color .15s ease; }
-a:focus-visible { outline: 2px solid var(--nav-active); outline-offset: 3px; border-radius: 2px; }
+a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 3px; border-radius: 2px; }
 
 /* ---------- Layout ---------- */
 /* Desktop mirrors the frame: left column 46→529px, bio column 529→958px */
@@ -223,7 +224,7 @@ a.project-card:hover .project-card__desc { color: var(--ink); }
   transition: border-color .15s ease;
 }
 .misc-card { height: 100%; transition: color .15s ease, border-color .15s ease; }   /* the whole card is the link, like work cards */
-.misc-card:hover { color: var(--link-hover); border-color: var(--link-hover); }   /* text + arrow go blue; the top icon (an image) stays black */
+.misc-card:hover { color: var(--link-hover); border-color: var(--link-hover); }   /* text + arrow go red; the top icon (an image) stays black */
 .misc__item--wide { grid-column: span 2; }
 .misc-card__title { margin-top: 14px; font-weight: 700; }   /* title at card + 68px */
 .misc-card__title + p { margin-top: 13px; }
@@ -275,7 +276,7 @@ a.project-card:hover .project-card__desc { color: var(--ink); }
   transition: color .2s ease;
 }
 .tabbar__tab[aria-current="page"] { color: var(--ink); }
-.tabbar__tab:not([aria-current="page"]):hover { color: var(--nav-active); }
+.tabbar__tab:not([aria-current="page"]):hover { color: var(--link-hover-on-dark); }
 
 @media (prefers-reduced-motion: reduce) {
   .tabbar__indicator, .tabbar__tab, .connect__link .icon, .work-card__arrow, .misc-card__link .icon { transition: none; }
@@ -570,7 +571,7 @@ html { scroll-behavior: smooth; }
 }
 
 /* Footer: name, connect links, other case studies */
-.case-footer { background: var(--ink); color: var(--paper); }
+.case-footer { --link-hover: var(--link-hover-on-dark); background: var(--ink); color: var(--paper); }
 .case-footer__inner {
   max-width: 1512px;
   margin: 0 auto;
@@ -657,13 +658,14 @@ html { scroll-behavior: smooth; }
   transition: width .2s ease, height .2s ease, margin .2s ease, border-color .2s ease, opacity .2s ease;
 }
 .cursor-ring.is-visible { opacity: 1; }
-.cursor-ring.is-hovering {                /* grows and turns blue over links */
+.cursor-ring.is-hovering {                /* grows and turns red over links */
   width: 44px;
   height: 44px;
   margin: -22px 0 0 -22px;
   border-color: var(--link-hover);
 }
 .cursor-ring.is-inverted:not(.is-hovering) { border-color: var(--paper); }   /* over the black footer and tab bar */
+.cursor-ring.is-inverted.is-hovering { border-color: var(--link-hover-on-dark); }
 @media (hover: none), (pointer: coarse) {
   .cursor-ring { display: none; }
 }
