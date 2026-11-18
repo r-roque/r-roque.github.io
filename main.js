@@ -107,3 +107,21 @@ if (toc) {
   window.addEventListener("resize", syncToc);
   syncToc();
 }
+
+// Work previews: muted loops that play only while on screen. With reduced motion
+// they stay on their poster frame. preload="none" keeps them off the home view's load.
+const previews = document.querySelectorAll(".project-card__video");
+if (previews.length) {
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const io = new IntersectionObserver((entries) => {
+    for (const { target, isIntersecting } of entries) {
+      if (isIntersecting && !still.matches) target.play().catch(() => {});
+      else target.pause();
+    }
+  }, { threshold: 0.25 });
+  previews.forEach((v) => io.observe(v));
+  still.addEventListener("change", () => {
+    if (still.matches) previews.forEach((v) => v.pause());
+    else previews.forEach((v) => { io.unobserve(v); io.observe(v); });   // re-check what's on screen
+  });
+}
