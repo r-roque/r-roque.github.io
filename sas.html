@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SAS Institute — Rodrigo Roque-Hernandez</title>
-  <meta name="description" content="Case study: Design Engineer Intern at SAS Institute — customer success templates and the Trust Hub.">
+  <title>SAS AI Impact Report — Rodrigo Roque-Hernandez</title>
+  <meta name="description" content="Case study: designing and building SAS’s Data and AI Impact Report hub on sas.com as a Design Engineer Intern.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&family=Michroma&display=swap" rel="stylesheet">
   <link rel="icon" href="star.ico">
-  <link rel="stylesheet" href="styles.css?v=2026-11-18e">
+  <link rel="stylesheet" href="styles.css?v=2026-11-18f">
 </head>
 <body>
   <!-- Case study: nodes 169:424 (desktop), 199:349 (mobile) -->
@@ -20,19 +20,19 @@
         local <time class="clock__time" id="clock">13:21:59</time>
       </p>
 
-      <p class="case__tags">design systems | front-end | internship</p>
-      <h1 class="case__title">SAS Institute</h1>
-      <p class="case__subtitle">Customer story templates and a flagship report hub, designed and shipped on sas.com</p>
+      <h1 class="case__title">SAS AI Impact Report</h1>
+      <p class="case__subtitle">Designing SAS’s flagship Data and AI Impact Report hub, from concept to sas.com</p>
 
-      <div class="case__meta-scroll" tabindex="0" aria-label="Role, timeline, tools, and impact">
-        <dl class="case__meta">
-          <div><dt>Role</dt><dd>Design Engineer Intern (summer → year-round)</dd></div>
-          <div><dt>Timeline</dt><dd>May 2026 - Present</dd></div>
-          <div><dt>Tools</dt><dd>Figma, AEM/CMS, FigJam, VS Code</dd></div>
-          <div><dt>Impact</dt><dd>Live on sas.com, 50k+ views</dd></div>
-        </dl>
-      </div>
-      <p class="case__hint">swipe for role, timeline, tools, and impact</p>
+      <figure class="case-hero case-hero--crop">
+        <img src="assets/previews/sas-report-poster.webp" width="1108" height="720" alt="The live Data and AI Impact Report page on sas.com, shown on a laptop">
+      </figure>
+
+      <dl class="case__meta">
+        <div><dt>Role</dt><dd>Design Engineer Intern</dd><dd>Layout and components</dd><dd>Interaction design</dd><dd>Front-end build</dd></div>
+        <div><dt>Team</dt><dd>My manager</dd><dd class="case-todo-inline">[Who else?]</dd></div>
+        <div><dt>Timeline</dt><dd>May 2026 - Present</dd><dd>First full design in 1 day</dd><dd class="case-todo-inline">[Report dates?]</dd></div>
+        <div><dt>Tools</dt><dd>Figma, FigJam</dd><dd>VS Code</dd><dd>AEM</dd></div>
+      </dl>
     </header>
 
     <div class="case__layout">
@@ -41,16 +41,18 @@
         <ol class="case-toc__list">
           <li><a class="case-toc__link" href="#overview">Overview</a></li>
           <li><a class="case-toc__link" href="#context">Context</a></li>
-          <li><a class="case-toc__link" href="#process">Process</a>
+          <li><a class="case-toc__link" href="#problem">Problem</a></li>
+          <li><a class="case-toc__link" href="#research">Research</a></li>
+          <li><a class="case-toc__link" href="#solution">Solution</a>
             <ul class="case-toc__sub">
-              <li><a class="case-toc__link" href="#templates">Story templates</a></li>
-              <li><a class="case-toc__link" href="#header">Header menu</a></li>
-              <li><a class="case-toc__link" href="#anniversary">50th Anniversary</a></li>
-              <li><a class="case-toc__link" href="#trust-hub">Trust Hub</a></li>
+              <li><a class="case-toc__link" href="#timeline">Idea to design</a></li>
+              <li><a class="case-toc__link" href="#workflow">Where Figma sits</a></li>
+              <li><a class="case-toc__link" href="#ai-call">Overruling the AI</a></li>
+              <li><a class="case-toc__link" href="#my-tool">A tool I built</a></li>
             </ul>
           </li>
-          <li><a class="case-toc__link" href="#impact">Impact</a></li>
-          <li><a class="case-toc__link" href="#reflection">Reflection</a></li>
+          <li><a class="case-toc__link" href="#scenarios">Scenarios</a></li>
+          <li><a class="case-toc__link" href="#learnings">Learnings</a></li>
         </ol>
       </nav>
 
@@ -60,68 +62,141 @@
           <h2 class="case-section__headline">A summer internship that ended with the flagship report.</h2>
           <div class="case-section__body">
             <p>I joined SAS’s Marketing department as a Summer Design Engineer Intern. The role was extended into a year-round position spanning both design and the frontend code that ships live on sas.com.</p>
-            <p>This case study centers on the two projects that bookend that internship: the customer success story templates I inherited as my first real assignment, and the Trust Hub, the flagship report experience I ended up owning outright.</p>
-            <p>What happened in between is the story of how I earned that trust.</p>
+            <p>My first project was rebuilding SAS’s customer success story templates in Figma as a production-ready prototype, balancing brand requirements against AEM’s technical limits and accessibility compliance. It doubled as an unofficial test of brand fluency. After a few rounds, I could tell what felt like SAS and what didn’t without being told. The templates and a redesigned header utility menu shipped live on sas.com, gathering 50k+ views.</p>
+            <p>That’s when my manager started trusting me with more, and it led to the report hub this case study is about.</p>
           </div>
-        </section>
-
-        <section class="case-section" id="process">
-          <p class="case-section__eyebrow"><span class="case-section__num">02</span>Process</p>
-          <h2 class="case-section__headline">Earning trust one project at a time.</h2>
-
-          <div class="case-sub">
-            <h3 class="case-sub__title" id="templates">Customer story templates</h3>
-            <p>My first project was rebuilding SAS’s customer success story page templates in Figma as a production-ready prototype, balancing SAS’s brand requirements against AEM’s technical limitations and accessibility compliance.</p>
-            <p>It doubled as an unofficial test of brand fluency. After a few rounds of iteration, I could tell what felt like SAS and what didn’t without being told, and that’s when my manager started trusting me with more.</p>
-          </div>
-
-          <div class="case-sub">
-            <h3 class="case-sub__title" id="header">Header utility menu</h3>
-            <p>I redesigned the site header’s utility menu, replacing the flag-based country/region selector with a language selector. I explored a globe-icon pill as the trigger, with both mobile and desktop treatments.</p>
-          </div>
-
-          <div class="case-sub">
-            <h3 class="case-sub__title" id="anniversary">50th Anniversary exhibit</h3>
-            <p>I designed three interactive pop-up modular window concepts for SAS’s 50th Anniversary exhibit: a vitals scrub, a percolation tap grid, and a B-tree roots auto-grow visualization.</p>
-          </div>
-
-          <div class="case-sub">
-            <h3 class="case-sub__title" id="trust-hub">Trust Hub</h3>
-            <p>I owned SAS’s flagship Data &amp; AI 2026 report hub end-to-end: full layout, component architecture, and interaction design from concept through engineering.</p>
-            <p>The first iteration was due in a week, which was too tight for any low-fidelity work or sketching. I went straight into high-fidelity design using only the previous year’s report page as a reference, and delivered a full design after one day. My manager told me afterward that he fully trusted my work and was genuinely impressed by how fast I’d picked up SAS’s design language.</p>
-            <p>Everything after that was refinement, landing on an editorial “Instrument &amp; Ink” direction after extensive iterative prototyping. The final version lives on sas.com as “The Impact of Trust”.</p>
-          </div>
-
           <div class="case-figures">
             <a class="case-figure" href="https://www.figma.com/design/ojtjZQxUkL84WSLEDpnDrL/Customer-Story-Template-Designs?node-id=0-1" target="_blank" rel="noopener">
               <img class="case-figure__img" src="images/sas-customer-success.png" width="500" height="264"
                   alt="Figma canvas of the customer success story page templates">
-              <span class="case-figure__caption">Customer Success Page<span class="icon icon--caption" aria-hidden="true"></span></span>
+              <span class="case-figure__caption">Customer Success Templates<span class="icon icon--caption" aria-hidden="true"></span></span>
             </a>
+          </div>
+        </section>
+
+        <section class="case-section" id="problem">
+          <p class="case-section__eyebrow"><span class="case-section__num">02</span>Problem</p>
+          <h2 class="case-section__headline">A flagship report, a one-week deadline, and no room for lo-fi.</h2>
+          <div class="case-section__body">
+            <p>I was handed SAS’s Data &amp; AI 2026 report hub to own end-to-end: full layout, component architecture, and interaction design, from concept through engineering.</p>
+            <p>The first iteration was due in a week. That was too tight for sketching or low-fidelity rounds, so whatever I showed first had to already look and behave like SAS.</p>
+            <blockquote class="case-hmw">How might we turn a research report into something readers explore and share, and get a credible first version up in a week?</blockquote>
+            <aside class="case-todo" role="note">
+              <p class="case-todo__label">Placeholder for rodri</p>
+              <p>Who is the report for (executives, data leaders, analysts?), and what wasn’t working about last year’s report page? One or two sentences.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="case-section" id="research">
+          <p class="case-section__eyebrow"><span class="case-section__num">03</span>Research</p>
+          <h2 class="case-section__headline">Last year’s report, and a brand I already knew by feel.</h2>
+          <div class="case-section__body">
+            <p>With a week on the clock, research meant working from what already existed. My only reference was the previous year’s report page, and the brand fluency I had built on the customer success templates did the rest.</p>
+            <aside class="case-todo" role="note">
+              <p class="case-todo__label">Placeholder for rodri</p>
+              <p>Anything else you looked at or learned before designing? For example: other annual reports you benchmarked, analytics on last year’s page, or input from the report’s authors or stakeholders.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="case-section" id="solution">
+          <p class="case-section__eyebrow"><span class="case-section__num">04</span>Solution</p>
+          <h2 class="case-section__headline">An editorial “Instrument &amp; Ink” hub, live on sas.com.</h2>
+          <div class="case-figures">
             <a class="case-figure" href="https://www.figma.com/design/RkcIUQLn2Nz2f2cf21oxFE/Data---AI-Report-Redesign--%3E-Hub?node-id=0-1" target="_blank" rel="noopener">
               <img class="case-figure__img" src="images/sas-trust-hub.png" width="500" height="262"
                   alt="Figma canvas of the Trust Hub report pages">
-              <span class="case-figure__caption">Trust Hub<span class="icon icon--caption" aria-hidden="true"></span></span>
+              <span class="case-figure__caption">Report Hub<span class="icon icon--caption" aria-hidden="true"></span></span>
             </a>
           </div>
-        </section>
-
-        <section class="case-section" id="impact">
-          <p class="case-section__eyebrow"><span class="case-section__num">03</span>Impact</p>
-          <h2 class="case-section__headline">Shipped on sas.com, with 50k+ views.</h2>
           <div class="case-section__body">
-            <p>The customer success templates and header redesign shipped live on sas.com under the real AEM and accessibility constraints, gathering 50k+ views.</p>
-            <p>The Trust Hub’s survey interactive ran on real questions from the actual report, alongside a shareable trust-profile card.</p>
-            <p>That growing trust is also what turned a summer internship into a year-round role: the fastest, clearest signal that the work was landing the way I meant it to.</p>
+            <p>The final hub is live on sas.com. It pairs an editorial “Instrument &amp; Ink” visual direction with a survey interactive that runs on real questions from the actual report, and a shareable trust-profile card at the end.</p>
+            <p>I went straight into high fidelity and delivered a full design after one day, using only last year’s report page as a reference. My manager told me afterward that he fully trusted my work and was impressed by how fast I’d picked up SAS’s design language. Everything after that was refinement, through iterative prototyping, until the Instrument &amp; Ink direction landed.</p>
+            <aside class="case-todo" role="note">
+              <p class="case-todo__label">Placeholder for rodri</p>
+              <p>The live page’s headline reads “The New Economics of Trust”, while this page used to call it “The Impact of Trust”. Which name should I use? Confirm the live link: is it <a href="https://www.sas.com/en_us/gc/data-and-ai-impact-report.html" target="_blank" rel="noopener">sas.com/en_us/gc/data-and-ai-impact-report.html</a>? If so, this becomes a “See it live” link. Also: any metrics for the hub itself (views, survey completions, cards shared)?</p>
+            </aside>
+          </div>
+
+          <div class="case-sub">
+            <h3 class="case-sub__title" id="timeline">Idea to design</h3>
+            <ol class="case-log">
+              <li><span class="case-log__when">Day 0</span><span>Brief: own the 2026 report hub, first iteration due in one week.</span></li>
+              <li><span class="case-log__when">Day 1</span><span>Full high-fidelity design delivered, built from last year’s page.</span></li>
+              <li><span class="case-log__when">[Day ?]</span><span>Iterative prototyping lands the Instrument &amp; Ink direction.</span></li>
+              <li><span class="case-log__when">[Day ?]</span><span>Survey interactive and trust-profile card working.</span></li>
+              <li><span class="case-log__when">[Date ?]</span><span>Live on sas.com.</span></li>
+            </ol>
+            <aside class="case-todo" role="note">
+              <p class="case-todo__label">Placeholder for rodri</p>
+              <p>Fill in the bracketed times. Hours are even better than days if you remember them (for example, “hour 6: first clickable prototype”).</p>
+            </aside>
+          </div>
+
+          <div class="case-sub">
+            <h3 class="case-sub__title" id="workflow">Where Figma sits</h3>
+            <ol class="case-flow" aria-label="Workflow">
+              <li>Last year’s page</li>
+              <li class="case-flow__figma">Figma</li>
+              <li>[Prototype / agent?]</li>
+              <li>VS Code</li>
+              <li>AEM</li>
+              <li>sas.com</li>
+            </ol>
+            <aside class="case-todo" role="note">
+              <p class="case-todo__label">Placeholder for rodri</p>
+              <p>Is this the real order? Where did exploration happen, and what did the Figma file become input for: hand-written code, an AI coding agent, AEM components? If you skipped Figma for some parts, say that too.</p>
+            </aside>
+          </div>
+
+          <div class="case-sub">
+            <h3 class="case-sub__title" id="ai-call">Overruling the AI</h3>
+            <aside class="case-todo" role="note">
+              <p class="case-todo__label">Placeholder for rodri</p>
+              <p>One moment where an AI tool suggested something and you chose differently. Three short parts: what it suggested, what you chose, and why. If this happened on a different project, tell me and I’ll move this there.</p>
+            </aside>
+          </div>
+
+          <div class="case-sub">
+            <h3 class="case-sub__title" id="my-tool">A tool I built for myself</h3>
+            <aside class="case-todo" role="note">
+              <p class="case-todo__label">Placeholder for rodri</p>
+              <p>A small tool, script, plugin or template you made that killed a manual task (for example, while building on AEM). What it does, and what it saved. If it fits better on another project or the Misc tab, I’ll move it.</p>
+            </aside>
           </div>
         </section>
 
-        <section class="case-section" id="reflection">
-          <p class="case-section__eyebrow"><span class="case-section__num">04</span>Reflection</p>
-          <h2 class="case-section__headline">Start further along the trust curve.</h2>
+        <section class="case-section" id="scenarios">
+          <p class="case-section__eyebrow"><span class="case-section__num">05</span>Scenarios</p>
+          <h2 class="case-section__headline">How a reader moves through the hub.</h2>
+          <ul class="case-scenarios">
+            <li class="case-scenario">
+              <p class="case-scenario__who">A reader takes the survey</p>
+              <p>They answer the same questions SAS asked in the actual report.</p>
+              <p class="case-scenario__then">Their answers build a trust profile, so the findings read as being about them.</p>
+            </li>
+            <li class="case-scenario">
+              <p class="case-scenario__who">A reader shares their result</p>
+              <p>At the end, they get a trust-profile card made for sharing.</p>
+              <p class="case-scenario__then">The report travels further than the page.</p>
+            </li>
+            <li class="case-scenario">
+              <p class="case-scenario__who">[A third reader?]</p>
+              <aside class="case-todo" role="note">
+                <p class="case-todo__label">Placeholder for rodri</p>
+                <p>For example, someone skimming on a phone, or someone who wants the full PDF. What does the hub do for them?</p>
+              </aside>
+            </li>
+          </ul>
+        </section>
+
+        <section class="case-section" id="learnings">
+          <p class="case-section__eyebrow"><span class="case-section__num">06</span>Learnings</p>
+          <h2 class="case-section__headline">Speed came from trust, and trust came from fluency.</h2>
           <div class="case-section__body">
-            <p>The real through-line across this internship wasn’t any single deliverable, but the trust I built, project by project. It started with a manager testing whether I understood SAS’s brand well enough to work inside it, and it ended with him handing me a flagship report and stepping back.</p>
-            <p>Going into my next role, I want to start further along that curve: less time earning the benefit of the doubt, and more time doing the ambiguous, high-stakes work outright.</p>
+            <p>Delivering a full design in a day only worked because I had already learned SAS’s design language on smaller projects. The real through-line of this internship wasn’t any single deliverable, but the trust I built, project by project. It started with a manager testing whether I understood the brand well enough to work inside it, and it ended with him handing me a flagship report and stepping back.</p>
+            <p>That trust is also what turned a summer internship into a year-round role. Going into my next role, I want to start further along that curve: less time earning the benefit of the doubt, and more time doing the ambiguous, high-stakes work outright.</p>
           </div>
         </section>
       </div>
@@ -167,6 +242,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=2026-11-18e" defer></script>
+  <script src="main.js?v=2026-11-18f" defer></script>
 </body>
 </html>
