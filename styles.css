@@ -453,6 +453,11 @@ a.project-card:hover .project-card__desc { color: var(--ink); }
 .case-sub > p + p { margin-top: var(--line); }
 .case-sub .case-list { display: grid; gap: var(--line); }
 
+/* Inline "See it live" link */
+.case-link { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.case-link .icon { margin-left: 4px; vertical-align: middle; }
+.case-link:hover { color: var(--link-hover); }
+
 /* Idea-to-prototype log: when each step happened */
 .case-log { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; border-left: 1px solid #d9d9d9; }
 .case-log li { display: grid; grid-template-columns: 9em 1fr; gap: 16px; padding-left: 20px; }
@@ -464,7 +469,7 @@ a.project-card:hover .project-card__desc { color: var(--ink); }
 .case-flow li + li { margin-left: 28px; position: relative; }
 .case-flow li + li::before { content: "→"; position: absolute; left: -22px; top: 6px; color: var(--muted-strong); }
 .case-flow__figma { background: var(--ink); color: var(--paper); font-weight: 700; }
-.case-flow + p { margin-top: var(--line); }
+.case-flow + p, .case-sub > p + .case-log { margin-top: var(--line); }
 
 /* Scenarios: short "who, what happens" cards */
 .case-scenarios { margin: 28px 0 0 38px; padding: 0; list-style: none; max-width: 1018px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
