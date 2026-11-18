@@ -154,6 +154,13 @@ a:focus-visible { outline: 2px solid var(--nav-active); outline-offset: 3px; bor
   height: 100%;
   object-fit: cover;
 }
+/* "Other work" has no clip yet: a quiet placeholder in place of the video */
+.project-card--other .project-card__preview {
+  display: grid;
+  place-items: center;
+  background: #f4f4f4;
+}
+.project-card__placeholder { font-family: var(--font-display); letter-spacing: 1px; color: var(--muted-strong); }
 .project-card__caption {
   display: grid;
   align-content: start;
