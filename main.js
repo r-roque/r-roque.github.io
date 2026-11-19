@@ -58,7 +58,7 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     const target = e.target instanceof Element ? e.target : null;
     ring.classList.add("is-visible");
     ring.classList.toggle("is-hovering", Boolean(target?.closest("a, button")));
-    ring.classList.toggle("is-inverted", Boolean(target?.closest(".case-footer, .tabbar")));
+    ring.classList.toggle("is-inverted", Boolean(target?.closest(".tabbar")));
     if (!queued) {
       queued = true;
       requestAnimationFrame(() => {
