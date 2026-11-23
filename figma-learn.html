@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&family=Michroma&display=swap" rel="stylesheet">
   <link rel="icon" href="star.ico">
-  <link rel="stylesheet" href="styles.css?v=2026-11-19a">
+  <link rel="stylesheet" href="styles.css?v=2026-11-23">
 </head>
 <body>
   <!-- Case study: nodes 169:510 (desktop), 199:434 (mobile) -->
@@ -22,6 +22,7 @@
 
       <h1 class="case__title">Figma Learn</h1>
       <p class="case__subtitle">An in-app onboarding and learning system, built inside the tool itself</p>
+      <p class="case__impact"><span class="case__impact-label">Impact</span>A 13-screen prototype, tested in three usability sessions, with two fixes made</p>
 
       <figure class="case-hero">
         <img src="assets/previews/figma-learn-poster.webp?v=2" width="1108" height="720" alt="The Figma Learn prototype: a Beginner Track card and a Continue where you left off bar on the Figma home screen">
@@ -40,9 +41,6 @@
         <p class="case-toc__label">On this page</p>
         <ol class="case-toc__list">
           <li><a class="case-toc__link" href="#overview">Overview</a></li>
-          <li><a class="case-toc__link" href="#context">Context</a></li>
-          <li><a class="case-toc__link" href="#problem">Problem</a></li>
-          <li><a class="case-toc__link" href="#research">Research</a></li>
           <li><a class="case-toc__link" href="#solution">Solution</a>
             <ul class="case-toc__sub">
               <li><a class="case-toc__link" href="#iteration">Tested and fixed</a></li>
@@ -50,50 +48,17 @@
               <li><a class="case-toc__link" href="#workflow">Where Figma sits</a></li>
             </ul>
           </li>
+          <li><a class="case-toc__link" href="#context">Context</a></li>
+          <li><a class="case-toc__link" href="#problem">Problem</a></li>
+          <li><a class="case-toc__link" href="#research">Research</a></li>
           <li><a class="case-toc__link" href="#scenarios">Scenarios</a></li>
           <li><a class="case-toc__link" href="#learnings">Learnings</a></li>
         </ol>
       </nav>
 
       <div class="case__content">
-        <section class="case-section" id="context">
-          <p class="case-section__eyebrow"><span class="case-section__num">01</span>Context</p>
-          <h2 class="case-section__headline">Figma’s learning resources all live outside Figma.</h2>
-          <div class="case-section__body">
-            <p>For MEJO 581, I ran a UX competitive analysis across six sites (including Stripe, Axios, and Are.na) built around a thesis: user-centered design and product-centered design produce genuinely different outcomes, not just different processes. Figma Learn was the follow-through on that thesis.</p>
-            <p>Figma’s own learning resources like docs, YouTube tutorials, and community files all live outside the tool, forcing beginners onto YouTube, Reddit, and third-party documentation just to understand the basics.</p>
-          </div>
-        </section>
-
-        <section class="case-section" id="problem">
-          <p class="case-section__eyebrow"><span class="case-section__num">02</span>Problem</p>
-          <h2 class="case-section__headline">Beginners can’t find a starting point inside the tool.</h2>
-          <div class="case-section__body">
-            <blockquote class="case-quote">“Knowing where to start... there are so many tools.”</blockquote>
-            <blockquote class="case-quote">“I don’t know what I can do on Figma.”</blockquote>
-            <blockquote class="case-hmw">How might we help self-taught beginners learn Figma without ever leaving Figma?</blockquote>
-          </div>
-        </section>
-
-        <section class="case-section" id="research">
-          <p class="case-section__eyebrow"><span class="case-section__num">03</span>Research</p>
-          <h2 class="case-section__headline">The same gap, everywhere beginners learn.</h2>
-          <div class="case-section__body">
-            <p>I traced the gap through direct observation: App Team Carolina’s UI/UX Academy, Information Science and MEJO classrooms, Figma Community forums, r/figma, and r/learndesign all showed the same pattern. Self-taught learners couldn’t find a starting point inside the tool itself.</p>
-          </div>
-          <ul class="case-section__body case-list">
-            <li>Ran two in-depth interviews (Nina, a MEJO major exploring UX through App Team Carolina, and Aaron, an Information Science major who switched from pre-dental to UX) plus one AI-assisted composite interview, run with Claude, to surface patterns across a broader self-taught-learner archetype. Then built personas and a spectrum map across all three.</li>
-            <li>Benchmarked against Duolingo (self-paced, gamified progression, but not contextual to a design tool), Codecademy (learn-by-doing, but a separate platform that still requires leaving Figma), and Figma’s own Community (templates and resources, but no structured path, and most users don’t know it exists or how to use it for learning).</li>
-          </ul>
-          <div class="case-gallery case-gallery--pair">
-            <img src="images/figma-learn-persona-1.png" width="528" height="381" alt="User persona card for Nina, a MEJO major exploring UX">
-            <img src="images/figma-learn-persona-2.png" width="528" height="381" alt="User persona card for Aaron, an Information Science major">
-          </div>
-          <p class="case-caption">Personas for Nina and Aaron, built from the two interviews.</p>
-        </section>
-
         <section class="case-section" id="solution">
-          <p class="case-section__eyebrow"><span class="case-section__num">04</span>Solution</p>
+          <p class="case-section__eyebrow"><span class="case-section__num">01</span>Solution</p>
           <h2 class="case-section__headline">A learning path that feels native to Figma.</h2>
           <div class="case-figures">
             <a class="case-figure" href="https://www.figma.com/design/JsYte8Sxq1CWlCEEtn0fSB/Figma-Learn---Wireframes?node-id=0-1" target="_blank" rel="noopener">
@@ -155,6 +120,42 @@
           </details>
         </section>
 
+        <section class="case-section" id="context">
+          <p class="case-section__eyebrow"><span class="case-section__num">02</span>Context</p>
+          <h2 class="case-section__headline">Figma’s learning resources all live outside Figma.</h2>
+          <div class="case-section__body">
+            <p>For MEJO 581, I ran a UX competitive analysis across six sites (including Stripe, Axios, and Are.na) built around a thesis: user-centered design and product-centered design produce genuinely different outcomes, not just different processes. Figma Learn was the follow-through on that thesis.</p>
+            <p>Figma’s own learning resources like docs, YouTube tutorials, and community files all live outside the tool, forcing beginners onto YouTube, Reddit, and third-party documentation just to understand the basics.</p>
+          </div>
+        </section>
+
+        <section class="case-section" id="problem">
+          <p class="case-section__eyebrow"><span class="case-section__num">03</span>Problem</p>
+          <h2 class="case-section__headline">Beginners can’t find a starting point inside the tool.</h2>
+          <div class="case-section__body">
+            <blockquote class="case-quote">“Knowing where to start... there are so many tools.”</blockquote>
+            <blockquote class="case-quote">“I don’t know what I can do on Figma.”</blockquote>
+            <blockquote class="case-hmw">How might we help self-taught beginners learn Figma without ever leaving Figma?</blockquote>
+          </div>
+        </section>
+
+        <section class="case-section" id="research">
+          <p class="case-section__eyebrow"><span class="case-section__num">04</span>Research</p>
+          <h2 class="case-section__headline">The same gap, everywhere beginners learn.</h2>
+          <div class="case-section__body">
+            <p>I traced the gap through direct observation: App Team Carolina’s UI/UX Academy, Information Science and MEJO classrooms, Figma Community forums, r/figma, and r/learndesign all showed the same pattern. Self-taught learners couldn’t find a starting point inside the tool itself.</p>
+          </div>
+          <ul class="case-section__body case-list">
+            <li>Ran two in-depth interviews (Nina, a MEJO major exploring UX through App Team Carolina, and Aaron, an Information Science major who switched from pre-dental to UX) plus one AI-assisted composite interview, run with Claude, to surface patterns across a broader self-taught-learner archetype. Then built personas and a spectrum map across all three.</li>
+            <li>Benchmarked against Duolingo (self-paced, gamified progression, but not contextual to a design tool), Codecademy (learn-by-doing, but a separate platform that still requires leaving Figma), and Figma’s own Community (templates and resources, but no structured path, and most users don’t know it exists or how to use it for learning).</li>
+          </ul>
+          <div class="case-gallery case-gallery--pair">
+            <img src="images/figma-learn-persona-1.png" width="528" height="381" alt="User persona card for Nina, a MEJO major exploring UX">
+            <img src="images/figma-learn-persona-2.png" width="528" height="381" alt="User persona card for Aaron, an Information Science major">
+          </div>
+          <p class="case-caption">Personas for Nina and Aaron, built from the two interviews.</p>
+        </section>
+
         <section class="case-section" id="scenarios">
           <p class="case-section__eyebrow"><span class="case-section__num">05</span>Scenarios</p>
           <h2 class="case-section__headline">Four moments in a beginner’s first weeks.</h2>
@@ -208,6 +209,6 @@
     </ul>
   </footer>
 
-  <script src="main.js?v=2026-11-19a" defer></script>
+  <script src="main.js?v=2026-11-23" defer></script>
 </body>
 </html>
