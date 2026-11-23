@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&family=Michroma&display=swap" rel="stylesheet">
   <link rel="icon" href="star.ico">
-  <link rel="stylesheet" href="styles.css?v=2026-11-19a">
+  <link rel="stylesheet" href="styles.css?v=2026-11-23">
 </head>
 <body>
   <!-- Case study: nodes 169:424 (desktop), 199:349 (mobile) -->
@@ -22,6 +22,7 @@
 
       <h1 class="case__title">SAS AI Impact Report</h1>
       <p class="case__subtitle">Designing “The New Economics of Trust”, SAS’s Data and AI Impact Report hub, from brainstorm to the sas.com front page</p>
+      <p class="case__impact"><span class="case__impact-label">Impact</span>50k views in its first week after launching on the sas.com front page</p>
 
       <figure class="case-hero case-hero--crop">
         <img src="assets/previews/sas-report-poster.webp" width="1108" height="720" alt="The live Data and AI Impact Report page on sas.com, shown on a laptop">
@@ -40,9 +41,6 @@
         <p class="case-toc__label">On this page</p>
         <ol class="case-toc__list">
           <li><a class="case-toc__link" href="#overview">Overview</a></li>
-          <li><a class="case-toc__link" href="#context">Context</a></li>
-          <li><a class="case-toc__link" href="#problem">Problem</a></li>
-          <li><a class="case-toc__link" href="#research">Research</a></li>
           <li><a class="case-toc__link" href="#solution">Solution</a>
             <ul class="case-toc__sub">
               <li><a class="case-toc__link" href="#timeline">Idea to launch</a></li>
@@ -50,50 +48,17 @@
               <li><a class="case-toc__link" href="#ai-call">Overruling the AI</a></li>
             </ul>
           </li>
+          <li><a class="case-toc__link" href="#context">Context</a></li>
+          <li><a class="case-toc__link" href="#problem">Problem</a></li>
+          <li><a class="case-toc__link" href="#research">Research</a></li>
           <li><a class="case-toc__link" href="#scenarios">Scenarios</a></li>
           <li><a class="case-toc__link" href="#learnings">Learnings</a></li>
         </ol>
       </nav>
 
       <div class="case__content">
-        <section class="case-section" id="context">
-          <p class="case-section__eyebrow"><span class="case-section__num">01</span>Context</p>
-          <h2 class="case-section__headline">A summer internship that ended with the flagship report.</h2>
-          <div class="case-section__body">
-            <p>I joined SAS’s Marketing department as a Summer Design Engineer Intern. The role was extended into a year-round position spanning both design and the frontend code that ships live on sas.com.</p>
-            <p>My first project was rebuilding SAS’s customer success story templates in Figma as a production-ready prototype, balancing brand requirements against AEM’s technical limits and accessibility compliance. It doubled as an unofficial test of brand fluency. After a few rounds, I could tell what felt like SAS and what didn’t without being told. The templates and a redesigned header utility menu shipped live on sas.com.</p>
-            <p>That’s when my manager started trusting me with more, and it led to the report hub this case study is about.</p>
-          </div>
-          <div class="case-figures">
-            <a class="case-figure" href="https://www.figma.com/design/ojtjZQxUkL84WSLEDpnDrL/Customer-Story-Template-Designs?node-id=0-1" target="_blank" rel="noopener">
-              <img class="case-figure__img" src="images/sas-customer-success.png" width="500" height="264"
-                  alt="Figma canvas of the customer success story page templates">
-              <span class="case-figure__caption">Customer Success Templates<span class="icon icon--caption" aria-hidden="true"></span></span>
-            </a>
-          </div>
-        </section>
-
-        <section class="case-section" id="problem">
-          <p class="case-section__eyebrow"><span class="case-section__num">02</span>Problem</p>
-          <h2 class="case-section__headline">A flagship report, a one-week deadline, and no room for lo-fi.</h2>
-          <div class="case-section__body">
-            <p>I was handed SAS’s 2026 Data and AI Impact Report hub to own end-to-end, from brainstorming to development: full layout, component architecture, and interaction design. The report was for industry and reporters, showing how trust impacts agentic AI in businesses.</p>
-            <p>The first iteration was due in a week. That was too tight for sketching or low-fidelity rounds, so I started on high-fidelity prototypes as soon as I got the assignment.</p>
-            <blockquote class="case-hmw">How might we turn a research report into something readers explore and share, and get a credible first version up in a week?</blockquote>
-          </div>
-        </section>
-
-        <section class="case-section" id="research">
-          <p class="case-section__eyebrow"><span class="case-section__num">03</span>Research</p>
-          <h2 class="case-section__headline">Last year’s report, and a brand I already knew by feel.</h2>
-          <div class="case-section__body">
-            <p>With a week on the clock, research meant working from what already existed. My only reference was the previous year’s report page, and the brand fluency I had built on the customer success templates did the rest.</p>
-            <p>My manager, Eric Morales, and I worked with the rest of the marketing team as stakeholders: writers, graphics, and marketers. Their reviews shaped every round after the first.</p>
-          </div>
-        </section>
-
         <section class="case-section" id="solution">
-          <p class="case-section__eyebrow"><span class="case-section__num">04</span>Solution</p>
+          <p class="case-section__eyebrow"><span class="case-section__num">01</span>Solution</p>
           <h2 class="case-section__headline">“The New Economics of Trust”, an editorial hub on sas.com’s front page.</h2>
           <div class="case-figures">
             <a class="case-figure" href="https://www.figma.com/design/RkcIUQLn2Nz2f2cf21oxFE/Data---AI-Report-Redesign--%3E-Hub?node-id=0-1" target="_blank" rel="noopener">
@@ -136,6 +101,42 @@
           <div class="case-sub">
             <h3 class="case-sub__title" id="ai-call">Overruling the AI</h3>
             <p>The hub originally included an AI chatbot called “Ask the Data”. After reviews, and given its token costs, we decided it would not be sustainable, so we cut it back and used an editorial look instead.</p>
+          </div>
+        </section>
+
+        <section class="case-section" id="context">
+          <p class="case-section__eyebrow"><span class="case-section__num">02</span>Context</p>
+          <h2 class="case-section__headline">A summer internship that ended with the flagship report.</h2>
+          <div class="case-section__body">
+            <p>I joined SAS’s Marketing department as a Summer Design Engineer Intern. The role was extended into a year-round position spanning both design and the frontend code that ships live on sas.com.</p>
+            <p>My first project was rebuilding SAS’s customer success story templates in Figma as a production-ready prototype, balancing brand requirements against AEM’s technical limits and accessibility compliance. It doubled as an unofficial test of brand fluency. After a few rounds, I could tell what felt like SAS and what didn’t without being told. The templates and a redesigned header utility menu shipped live on sas.com.</p>
+            <p>That’s when my manager started trusting me with more, and it led to the report hub this case study is about.</p>
+          </div>
+          <div class="case-figures">
+            <a class="case-figure" href="https://www.figma.com/design/ojtjZQxUkL84WSLEDpnDrL/Customer-Story-Template-Designs?node-id=0-1" target="_blank" rel="noopener">
+              <img class="case-figure__img" src="images/sas-customer-success.png" width="500" height="264"
+                  alt="Figma canvas of the customer success story page templates">
+              <span class="case-figure__caption">Customer Success Templates<span class="icon icon--caption" aria-hidden="true"></span></span>
+            </a>
+          </div>
+        </section>
+
+        <section class="case-section" id="problem">
+          <p class="case-section__eyebrow"><span class="case-section__num">03</span>Problem</p>
+          <h2 class="case-section__headline">A flagship report, a one-week deadline, and no room for lo-fi.</h2>
+          <div class="case-section__body">
+            <p>I was handed SAS’s 2026 Data and AI Impact Report hub to own end-to-end, from brainstorming to development: full layout, component architecture, and interaction design. The report was for industry and reporters, showing how trust impacts agentic AI in businesses.</p>
+            <p>The first iteration was due in a week. That was too tight for sketching or low-fidelity rounds, so I started on high-fidelity prototypes as soon as I got the assignment.</p>
+            <blockquote class="case-hmw">How might we turn a research report into something readers explore and share, and get a credible first version up in a week?</blockquote>
+          </div>
+        </section>
+
+        <section class="case-section" id="research">
+          <p class="case-section__eyebrow"><span class="case-section__num">04</span>Research</p>
+          <h2 class="case-section__headline">Last year’s report, and a brand I already knew by feel.</h2>
+          <div class="case-section__body">
+            <p>With a week on the clock, research meant working from what already existed. My only reference was the previous year’s report page, and the brand fluency I had built on the customer success templates did the rest.</p>
+            <p>My manager, Eric Morales, and I worked with the rest of the marketing team as stakeholders: writers, graphics, and marketers. Their reviews shaped every round after the first.</p>
           </div>
         </section>
 
@@ -186,6 +187,6 @@
     </ul>
   </footer>
 
-  <script src="main.js?v=2026-11-19a" defer></script>
+  <script src="main.js?v=2026-11-23" defer></script>
 </body>
 </html>
